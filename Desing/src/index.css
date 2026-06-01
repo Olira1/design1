@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --color-cream: oklch(0.985 0.008 80);
+  --color-ink: oklch(0.28 0.03 50);
+  --color-accent: oklch(0.62 0.14 45);
+  --color-accent-light: oklch(0.72 0.18 10);
+  --color-blush: oklch(0.72 0.1 15);
+}
+
+@utility bg-gradient-hero {
+  background: linear-gradient(
+    135deg,
+    oklch(0.99 0.012 75) 0%,
+    oklch(0.96 0.02 55) 50%,
+    oklch(0.94 0.03 40) 100%
+  );
+}
+
+@utility bg-gradient-accent {
+  background: linear-gradient(
+    135deg,
+    oklch(0.68 0.14 45) 0%,
+    oklch(0.75 0.12 35) 100%
+  );
+}
+
+@utility bg-gradient-pink {
+  background: linear-gradient(
+    90deg,
+    oklch(0.72 0.2 10) 0%,
+    oklch(0.55 0.22 350) 100%
+  );
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+}
