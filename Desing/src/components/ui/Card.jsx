@@ -1,34 +1,27 @@
-/*
-  Step 3: Shared UI Component - Card
-  ----------------------------------
-  A card is a reusable container for course cards, feature cards,
-  contact cards, and other boxed content.
-*/
+import { cn } from '../../utils/cn'
 
-/*
-  Tailwind className group:
-  - rounded-3xl gives cards the soft modern landing-page shape.
-  - border and bg-white separate the card from the cream background.
-  - p-6 adds consistent inside spacing.
-  - shadow-sm gives a subtle lift without making the design heavy.
-  - transition/hover improves the feel when cards are interactive.
-*/
-const cardClasses =
-  'rounded-3xl border border-[var(--color-border-soft)] bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-xl'
-
-export default function Card({ children, className = '', as: Component = 'article' }) {
-  /*
-    The "as" prop lets us choose the HTML tag later.
-    By default, an article is good for self-contained cards.
-  */
-  return <Component className={`${cardClasses} ${className}`}>{children}</Component>
-}
-export default function Card({ children, className = '' }) {
+export default function Card({
+  as: Component = 'article',
+  children,
+  className,
+  interactive = false,
+  ...props
+}) {
   return (
-    <article
-      className={`rounded-2xl border border-ink/8 bg-white/60 p-6 shadow-sm backdrop-blur-sm transition-shadow hover:shadow-md ${className}`}
+    <Component
+      className={cn(
+        /*
+          Tailwind purpose:
+          reusable white surface + soft radius + subtle border/shadow.
+          "interactive" adds motion only when a card is meant to feel clickable.
+        */
+        'rounded-3xl border border-[var(--color-border-soft)] bg-white p-6 shadow-sm',
+        interactive && 'transition duration-200 hover:-translate-y-1 hover:shadow-xl',
+        className,
+      )}
+      {...props}
     >
       {children}
-    </article>
+    </Component>
   )
 }
