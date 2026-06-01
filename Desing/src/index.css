@@ -1,52 +1,131 @@
 @import "tailwindcss";
 
-@theme {
+/*
+  Step 1: Foundation Setup
+  ------------------------
+  This file defines the global design system before we build any page sections.
+  We are setting Tailwind theme tokens, base styles, and reusable utilities here.
+*/
+
+/*
+  Design tokens:
+  These CSS variables are our project-level theme.
+  Later, Tailwind classNames can use them with arbitrary values like:
+  className="bg-[var(--color-cream)] text-[var(--color-ink)]"
+*/
+:root {
+  /*
+    Font tokens:
+    - --font-sans is used for readable body text, buttons, forms, and navigation.
+    - --font-display is used for elegant fashion-style headings.
+  */
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Playfair Display", Georgia, serif;
-  --color-cream: oklch(0.985 0.008 80);
-  --color-ink: oklch(0.28 0.03 50);
-  --color-accent: oklch(0.62 0.14 45);
-  --color-accent-light: oklch(0.72 0.18 10);
-  --color-blush: oklch(0.72 0.1 15);
+
+  /*
+    Color tokens:
+    These names make the design easier to understand than raw hex values.
+    - cream: warm page background
+    - ink: main readable dark text
+    - accent: main pink/rose brand color
+    - blush: soft secondary pink
+    - peach: warm secondary accent
+    - border-soft: subtle borders for cards and sections
+  */
+  --color-cream: #fff9f3;
+  --color-ink: #211816;
+  --color-muted: #6f625e;
+  --color-accent: #f84f95;
+  --color-accent-deep: #b43667;
+  --color-blush: #ffd9e6;
+  --color-peach: #ffd3b5;
+  --color-border-soft: #eaded8;
 }
 
-@utility bg-gradient-hero {
-  background: linear-gradient(
-    135deg,
-    oklch(0.99 0.012 75) 0%,
-    oklch(0.96 0.02 55) 50%,
-    oklch(0.94 0.03 40) 100%
-  );
-}
-
-@utility bg-gradient-accent {
-  background: linear-gradient(
-    135deg,
-    oklch(0.68 0.14 45) 0%,
-    oklch(0.75 0.12 35) 100%
-  );
-}
-
-@utility bg-gradient-pink {
-  background: linear-gradient(
-    90deg,
-    oklch(0.72 0.2 10) 0%,
-    oklch(0.55 0.22 350) 100%
-  );
-}
-
+/*
+  Global browser behavior:
+  Smooth scrolling makes anchor links like #about and #register feel polished.
+*/
 html {
   scroll-behavior: smooth;
 }
 
+/*
+  Body reset:
+  We remove the browser default margin and apply the main app background,
+  text color, and font family for the whole site.
+*/
 body {
   margin: 0;
+  min-width: 320px;
+  min-height: 100svh;
   font-family: var(--font-sans);
-  background-color: var(--color-cream);
   color: var(--color-ink);
+  background: var(--color-cream);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/*
+  Root element:
+  The React app mounts here. min-height helps full-page sections fill the screen.
+*/
 #root {
   min-height: 100svh;
+}
+
+/*
+  Media defaults:
+  Images and SVGs should scale down instead of overflowing their containers.
+*/
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  Form defaults:
+  Inputs and buttons inherit the site font so forms look consistent.
+*/
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@layer utilities {
+  /*
+    Tailwind utility class: bg-gradient-hero
+    Use this className when a section needs the warm cream-to-blush background.
+    Example future usage: className="bg-gradient-hero"
+  */
+  .bg-gradient-hero {
+    background:
+      radial-gradient(circle at top left, rgb(255 217 230 / 0.65), transparent 32rem),
+      linear-gradient(135deg, var(--color-cream) 0%, #fff1e7 55%, #ffe4ee 100%);
+  }
+
+  /*
+    Tailwind utility class: bg-gradient-accent
+    Use this className for primary CTA buttons that need the pink brand gradient.
+    Example future usage: className="bg-gradient-accent text-white"
+  */
+  .bg-gradient-accent {
+    background: linear-gradient(
+      90deg,
+      var(--color-accent) 0%,
+      var(--color-accent-deep) 100%
+    );
+  }
+
+  /*
+    Tailwind utility class: text-balance
+    Use this className on large headings so lines wrap more naturally.
+    Example future usage: className="text-balance"
+  */
+  .text-balance {
+    text-wrap: balance;
+  }
 }
