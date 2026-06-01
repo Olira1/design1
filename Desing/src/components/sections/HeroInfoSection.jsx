@@ -21,22 +21,7 @@ const heroInfoItems = [
 
 export default function HeroInfoSection() {
   return (
-    <section className="relative z-20 -mt-28 bg-cream pb-20 md:-mt-32 md:pb-28">
-      <div className="pointer-events-none absolute inset-x-0 top-0 -translate-y-[99%] overflow-hidden leading-none">
-        <svg
-          viewBox="0 0 1440 180"
-          className="block h-28 w-full md:h-40"
-          preserveAspectRatio="none"
-          aria-hidden
-        >
-          <path
-            fill="currentColor"
-            className="text-cream"
-            d="M0,70 C180,115 360,95 520,70 C720,38 900,40 1080,78 C1220,108 1330,118 1440,78 L1440,180 L0,180 Z"
-          />
-        </svg>
-      </div>
-
+    <section className="relative z-20 bg-cream pb-20 pt-8 md:pb-28 md:pt-12 mb-40">
       <div className="mx-auto max-w-5xl px-4 md:px-6">
         <div className="overflow-hidden rounded-lg border border-ink/5 bg-white/95 shadow-2xl shadow-ink/10 backdrop-blur-sm">
           <div className="grid md:grid-cols-3">

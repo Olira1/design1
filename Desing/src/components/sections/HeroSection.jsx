@@ -17,7 +17,7 @@ export default function HeroSection() {
 
       <HeroNavbar />
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-4 pb-16 pt-28 text-center md:px-6 md:pt-32">
+      <div className="relative z-20 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-4 pb-44 pt-28 text-center md:px-6 md:pb-52 md:pt-32">
         <h1 className="space-y-1 font-sans text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
           <span className="block">Learn</span>
           <span className="font-display block text-5xl font-normal italic text-accent-light md:text-6xl lg:text-7xl">
@@ -44,6 +44,21 @@ export default function HeroSection() {
             View Schedule
           </Button>
         </div>
+      </div>
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 overflow-hidden leading-none">
+        <svg
+          viewBox="0 0 1440 180"
+          className="block h-28 w-full md:h-40"
+          preserveAspectRatio="none"
+          aria-hidden
+        >
+          <path
+            fill="currentColor"
+            className="text-cream"
+            d="M0,70 C180,115 360,95 520,70 C720,38 900,40 1080,78 C1220,108 1330,118 1440,78 L1440,180 L0,180 Z"
+          />
+        </svg>
       </div>
     </section>
   )
