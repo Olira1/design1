@@ -20,13 +20,14 @@ export default function Card({
           reusable white surface + soft radius + subtle border/shadow.
           "interactive" adds motion only when a card is meant to feel clickable.
         */
-        'rounded-3xl border border-[var(--color-border-soft)] bg-white p-6 shadow-sm',
-        interactive && 'transition duration-200 hover:-translate-y-1 hover:shadow-xl',
+        "rounded-3xl border border-[var(--color-border-soft)] bg-#FFF9F3 p-6 shadow-sm",
+        interactive &&
+          "transition duration-200 hover:-translate-y-1 hover:shadow-xl",
         className,
       )}
       {...props}
     >
       {children}
     </Component>
-  )
+  );
 }

@@ -28,5 +28,5 @@ export const trainingModes = [
 export const scheduleCta = {
   title: 'New Student Registration Open',
   buttonLabel: 'Reserve Your Spot',
-  href: '#register',
+  href: '/register',
 };

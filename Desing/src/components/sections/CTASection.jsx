@@ -26,7 +26,7 @@ export default function CTASection() {
 
             <div className="mt-5 flex flex-wrap items-center gap-2.5">
               <Button
-                href="#register"
+                href="/register"
                 size="sm"
                 variant="secondary"
                 className="border-white/70 bg-white text-[11px] text-[var(--color-ink)]"

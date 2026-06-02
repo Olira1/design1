@@ -6,7 +6,7 @@ export default function HowItWorksSection() {
   if (!learningSteps.length) return null
 
   return (
-    <section id="how-it-works" className="bg-[var(--color-cream)] px-4 py-20 md:px-6">
+    <section id="how-it-works" className="bg-[var(--color-white)] px-4 py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Learning Process"

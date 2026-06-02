@@ -13,7 +13,10 @@ const iconMap = {
 
 export default function WhyChooseUsSection() {
   return (
-    <section id="why-choose-us" className="bg-[var(--color-cream)] px-4 py-20 md:px-6">
+    <section
+      id="why-choose-us"
+      className="bg-[var(--color-white)] px-4 py-20 md:px-6"
+    >
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Why Choose Us"
@@ -23,12 +26,14 @@ export default function WhyChooseUsSection() {
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {whyChooseUsFeatures.map((feature) => (
-            <Card key={feature.title} interactive>
+            <Card
+              key={feature.title}
+              interactive>
               <span
                 className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-blush)] text-sm font-bold text-[var(--color-accent)]"
                 aria-hidden="true"
               >
-                {iconMap[feature.icon] ?? '?'}
+                {iconMap[feature.icon] ?? "?"}
               </span>
               <h3 className="mt-4 font-[var(--font-display)] text-2xl text-[var(--color-ink)]">
                 {feature.title}
@@ -41,5 +46,5 @@ export default function WhyChooseUsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -40,7 +40,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="#register" size="sm" variant="primary">
+          <Button href="/register" size="sm" variant="primary">
             Register Now
           </Button>
         </div>
@@ -83,7 +83,7 @@ export default function Header() {
           <li className="pt-2">
             <Button
               className="w-full"
-              href="#register"
+              href="/register"
               onClick={closeMobileMenu}
             >
               Register Now

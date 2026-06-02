@@ -1,30 +1,30 @@
-import AboutSection from '../components/sections/AboutSection'
-import ContactSection from '../components/sections/ContactSection'
-import CoursesSection from '../components/sections/CoursesSection'
-import CTASection from '../components/sections/CTASection'
-import FAQSection from '../components/sections/FAQSection'
-import Footer from '../components/layout/Footer'
-import HeroSection from '../components/sections/HeroSection'
-import HowItWorksSection from '../components/sections/HowItWorksSection'
-import PortfolioSection from '../components/sections/PortfolioSection'
-import RegistrationSection from '../components/sections/RegistrationSection'
-import SchedulesSection from '../components/sections/SchedulesSection'
-import TestimonialsSection from '../components/sections/TestimonialsSection'
-import WhyChooseUsSection from '../components/sections/WhyChooseUsSection'
+import AboutSection from "../components/sections/AboutSection";
+import ContactSection from "../components/sections/ContactSection";
+import CoursesSection from "../components/sections/CoursesSection";
+import CTASection from "../components/sections/CTASection";
+import FAQSection from "../components/sections/FAQSection";
+import Footer from "../components/layout/Footer";
+import HeroSection from "../components/sections/HeroSection";
+import HowItWorksSection from "../components/sections/HowItWorksSection";
+import PortfolioSection from "../components/sections/PortfolioSection";
+import RegistrationSection from "../components/sections/RegistrationSection";
+import SchedulesSection from "../components/sections/SchedulesSection";
+import TestimonialsSection from "../components/sections/TestimonialsSection";
+import WhyChooseUsSection from "../components/sections/WhyChooseUsSection";
 
 export default function HomePage() {
   return (
     <>
       <main>
         <HeroSection />
-         <AboutSection />
-
-        <CoursesSection />
-        <PortfolioSection />
+        <AboutSection />
         <WhyChooseUsSection />
-        <TestimonialsSection />
-        <HowItWorksSection />
+        <CoursesSection />
         <SchedulesSection />
+        <PortfolioSection />
+        <HowItWorksSection />
+        <TestimonialsSection />
+
         <FAQSection />
         {/* <RegistrationSection /> */}
         <ContactSection />
@@ -33,5 +33,5 @@ export default function HomePage() {
 
       <Footer />
     </>
-  )
+  );
 }

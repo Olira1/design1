@@ -1,3 +1,8 @@
+import image2 from "../assets/images/image2.png";
+import image3 from "../assets/images/image3.png";
+import image4 from "../assets/images/image4.png";
+import image5 from "../assets/images/image5.png";
+
 /*
   Step 2: Courses data
   --------------------
@@ -13,6 +18,7 @@ export const courses = [
     level: "class",
     description:
       "Learn to build AI Powered Application from the ground up, starting with the fundamentals and advancing to enterprise-scale deployment.",
+    image: image2,
     startDate: "Jul 25th, 2026",
     totalPrice: "2400.00",
     paidInFullPrice: "1600.00",
@@ -28,6 +34,7 @@ export const courses = [
     level: "class",
     description:
       "Crafted to train participants how to manage cloud infrastructure using Amazon Web Services (AWS).",
+    image: image3,
     startDate: "Jun 27th, 2026",
     totalPrice: "1200.00",
     paidInFullPrice: "900.00",
@@ -43,6 +50,7 @@ export const courses = [
     level: "class",
     description:
       "Designed to equip students with the knowledge and skills necessary to manage and maintain SQL Server 2022 databases.",
+    image: image4,
     startDate: "Jun 27th, 2026",
     totalPrice: "1200.00",
     paidInFullPrice: "900.00",
@@ -58,6 +66,7 @@ export const courses = [
     level: "class",
     description:
       "Aims to prepare participants for creating and integrating APIs and applications within the MuleSoft platform.",
+    image: image5,
     startDate: "Jun 27th, 2026",
     totalPrice: "1200.00",
     paidInFullPrice: "900.00",

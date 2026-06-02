@@ -7,9 +7,13 @@ export default function SchedulesSection() {
   if (!availableSchedules.length || !trainingModes.length) return null
 
   return (
-    <section id="schedules" className="bg-white px-4 py-20 md:px-6">
+    <section id="schedules" className="bg-[#3a4f74] px-4 py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading eyebrow="Training Schedule" title="Flexible Training Schedules" />
+        <SectionHeading
+          eyebrow="Training Schedule"
+          title="Flexible Training Schedules"
+          className="[&_*]:text-white"
+        />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Card className="bg-[var(--color-cream)]">
@@ -18,11 +22,16 @@ export default function SchedulesSection() {
             </h3>
             <ul className="mt-5 space-y-4">
               {availableSchedules.map((schedule) => (
-                <li key={schedule.title} className="border-b border-[var(--color-border-soft)] pb-4 last:border-b-0 last:pb-0">
+                <li
+                  key={schedule.title}
+                  className="border-b border-[var(--color-border-soft)] pb-4 last:border-b-0 last:pb-0"
+                >
                   <p className="text-base font-semibold text-[var(--color-ink)]">
                     {schedule.title}
                   </p>
-                  <p className="text-sm text-[var(--color-muted)]">{schedule.time}</p>
+                  <p className="text-sm text-[var(--color-muted)]">
+                    {schedule.time}
+                  </p>
                 </li>
               ))}
             </ul>
@@ -37,8 +46,14 @@ export default function SchedulesSection() {
             </h3>
             <ul className="mt-5 space-y-3">
               {trainingModes.map((mode) => (
-                <li key={mode} className="flex items-start gap-2 text-sm text-[var(--color-muted)]">
-                  <span className="mt-1 text-[var(--color-accent)]" aria-hidden="true">
+                <li
+                  key={mode}
+                  className="flex items-start gap-2 text-sm text-[var(--color-muted)]"
+                >
+                  <span
+                    className="mt-1 text-[var(--color-accent)]"
+                    aria-hidden="true"
+                  >
                     •
                   </span>
                   <span>{mode}</span>
@@ -46,7 +61,8 @@ export default function SchedulesSection() {
               ))}
             </ul>
             <p className="mt-5 text-sm leading-7 text-[var(--color-muted)]">
-              Choose a schedule that works for you and reserve your seat in the next cohort.
+              Choose a schedule that works for you and reserve your seat in the
+              next cohort.
             </p>
             <Button href={scheduleCta.href} className="mt-6 w-full sm:w-auto">
               {scheduleCta.buttonLabel}
@@ -55,5 +71,5 @@ export default function SchedulesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

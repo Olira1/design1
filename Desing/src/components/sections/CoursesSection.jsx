@@ -32,6 +32,15 @@ export default function CoursesSection() {
                 </div>
               </div>
 
+              <div className="mt-4 overflow-hidden rounded-lg border border-[#e1e2e8]">
+                <img
+                  src={course.image}
+                  alt={`${course.title} course`}
+                  className="h-80 w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+
               <p className="mt-4 text-sm leading-6 text-[#5f646f]">
                 {course.description}
               </p>
@@ -60,7 +69,7 @@ export default function CoursesSection() {
                   {course.duration}
                 </span>
                 <a
-                  href="#register"
+                  href="/register"
                   className="rounded-full border border-[#b8adb4] px-5 py-1.5 text-xs font-semibold text-[#6e666e] transition hover:border-[#996073] hover:text-[#996073]"
                 >
                   {course.ctaLabel}

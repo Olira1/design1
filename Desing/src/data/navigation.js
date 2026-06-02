@@ -52,7 +52,7 @@ export const footerQuickLinks = [
   },
   {
     label: 'Register',
-    href: '#register',
+    href: '/register',
   },
 ]
 
