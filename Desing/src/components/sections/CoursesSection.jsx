@@ -24,21 +24,23 @@ export default function CoursesSection() {
               />
 
               <div className="flex flex-1 flex-col p-6">
-                <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-[var(--color-blush)] px-3 py-1 text-xs font-semibold text-[var(--color-accent)]">
-                    {course.duration}
-                  </span>
-                  <span className="rounded-full border border-[var(--color-border-soft)] px-3 py-1 text-xs font-semibold text-[var(--color-muted)]">
-                    {course.level}
-                  </span>
-                </div>
-
                 <h3 className="mt-4 font-[var(--font-display)] text-2xl text-[var(--color-ink)]">
                   {course.title}
                 </h3>
                 <p className="mt-3 flex-1 text-sm leading-7 text-[var(--color-muted)]">
                   {course.description}
                 </p>
+
+                <dl className="mt-4 space-y-2 text-sm">
+                  <div className="flex items-center justify-between gap-3 rounded-xl bg-[var(--color-blush)]/40 px-3 py-2">
+                    <dt className="font-semibold text-[var(--color-ink)]">Duration</dt>
+                    <dd className="text-[var(--color-accent)]">{course.duration}</dd>
+                  </div>
+                  <div className="flex items-center justify-between gap-3 rounded-xl border border-[var(--color-border-soft)] px-3 py-2">
+                    <dt className="font-semibold text-[var(--color-ink)]">Level</dt>
+                    <dd className="text-[var(--color-muted)]">{course.level}</dd>
+                  </div>
+                </dl>
 
                 <Button href="#register" className="mt-6 w-full">
                   {course.ctaLabel}

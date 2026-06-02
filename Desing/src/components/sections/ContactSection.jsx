@@ -4,18 +4,21 @@ import SectionHeading from '../ui/SectionHeading'
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="bg-[var(--color-cream)] px-4 py-20 md:px-6">
+    <section
+      id="contact"
+      className="bg-[var(--color-cream)] px-4 py-20 md:px-6"
+    >
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow="Get In Touch" title="Contact Us" />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              ['Phone', '+252 61 000 0000'],
-              ['WhatsApp', '+252 61 000 0000'],
-              ['Telegram', '@AtelierInstitute'],
-              ['Email', 'hello@atelier.com'],
-              ['Address', 'Fashion District, City Center'],
+              ["Phone", "+252 61 000 0000"],
+              ["WhatsApp", "+252 61 000 0000"],
+              ["Telegram", "@AtelierInstitute"],
+              ["Email", "hello@atelier.com"],
+              ["Address", "Fashion District, City Center"],
             ].map(([label, value]) => (
               <article
                 key={label}
@@ -24,7 +27,9 @@ export default function ContactSection() {
                 <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
                   {label}
                 </h3>
-                <p className="mt-2 text-sm text-[var(--color-muted)]">{value}</p>
+                <p className="mt-2 text-sm text-[var(--color-muted)]">
+                  {value}
+                </p>
               </article>
             ))}
 
@@ -48,15 +53,17 @@ export default function ContactSection() {
             </article>
           </div>
 
-          <div className="overflow-hidden rounded-3xl border border-[var(--color-border-soft)] bg-white">
-            <img
-              src={contactImage}
-              alt="Fashion designer working in a tailoring studio"
-              className="h-full w-full object-cover"
-            />
+          <div className="[perspective:1000px]">
+            <div className="overflow-hidden rounded-3xl border border-[var(--color-border-soft)] bg-white [perspective:1000px] [transform:rotateY(-6deg)_rotateX(0deg)_rotateZ(0deg)] shadow-[-10px_20px_30px_rgba(0,0,0,0.3)]">
+              <img
+                src={contactImage}
+                alt="Fashion designer working in a tailoring studio"
+                className="h-full w-full object-cover hover:scale-105 transition-all duration-300"
+              />
+            </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

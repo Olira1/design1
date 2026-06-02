@@ -14,7 +14,7 @@ export const courses = [
     description:
       "Learn sewing fundamentals and machine usage from the ground up.",
     ctaLabel: "Apply Now",
-    imageSrc:"../assets/images/image3.jpg"
+    imageSrc: "../assets/images/image3.jpg",
   },
   {
     id: "fashion-design",
@@ -24,7 +24,7 @@ export const courses = [
     description:
       "Master clothing design principles and unlock fashion creativity.",
     ctaLabel: "Apply Now",
-    imageSrc:"../assets/images/image4.jpg"
+    imageSrc: "../assets/images/image4.jpg",
   },
   {
     id: "pattern-making",
@@ -34,7 +34,7 @@ export const courses = [
     description:
       "Professional clothing measurement and precise cutting techniques.",
     ctaLabel: "Apply Now",
-    imageSrc:"../assets/images/image5.jpg"
+    imageSrc: "../assets/images/image5.jpg",
   },
   {
     id: "bridal-traditional-wear",
@@ -44,7 +44,7 @@ export const courses = [
     description:
       "Design and sew elegant cultural, ceremonial, and bridal outfits.",
     ctaLabel: "Apply Now",
-    imageSrc:"../assets/images/image6.jpg"
+    imageSrc: "../assets/images/image6.jpg",
   },
 ];
 
@@ -52,4 +52,4 @@ export const courses = [
   This smaller array is useful for the registration form select input.
   It avoids repeating course names manually in another file.
 */
-export const courseOptions = courses.map((course) => course.title)
+export const courseOptions = courses.map((course) => course.title);

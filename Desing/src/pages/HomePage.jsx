@@ -4,7 +4,6 @@ import CoursesSection from '../components/sections/CoursesSection'
 import CTASection from '../components/sections/CTASection'
 import FAQSection from '../components/sections/FAQSection'
 import Footer from '../components/layout/Footer'
-import Header from '../components/layout/Header'
 import HeroSection from '../components/sections/HeroSection'
 import HowItWorksSection from '../components/sections/HowItWorksSection'
 import PortfolioSection from '../components/sections/PortfolioSection'
@@ -16,11 +15,10 @@ import WhyChooseUsSection from '../components/sections/WhyChooseUsSection'
 export default function HomePage() {
   return (
     <>
-      <Header />
-
       <main>
         <HeroSection />
-        <AboutSection />
+         <AboutSection />
+
         <CoursesSection />
         <PortfolioSection />
         <WhyChooseUsSection />

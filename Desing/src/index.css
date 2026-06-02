@@ -40,6 +40,7 @@
   --color-blush: #ffd9e6;
   --color-peach: #ffd3b5;
   --color-border-soft: #eaded8;
+  --color-white: #ffffff;
 }
 
 /*
@@ -61,7 +62,7 @@ body {
   min-height: 100svh;
   font-family: var(--font-sans);
   color: var(--color-ink);
-  background: var(--color-cream);
+  background: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
