@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import { mainNavigationLinks } from '../../data/navigation'
-import { cn } from '../../utils/cn'
-import Button from '../ui/Button'
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { mainNavigationLinks } from "../../data/navigation";
+import { cn } from "../../utils/cn";
+import Button from "../ui/Button";
+import logo from "../../assets/images/logo.jpg";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMobileMenu = () => setIsMenuOpen((open) => !open)
-  const closeMobileMenu = () => setIsMenuOpen(false)
+  const toggleMobileMenu = () => setIsMenuOpen((open) => !open);
+  const closeMobileMenu = () => setIsMenuOpen(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-border-soft)] bg-[var(--color-cream)]/95 backdrop-blur">
@@ -17,11 +19,11 @@ export default function Header() {
           className="inline-flex items-center gap-2.5"
           onClick={closeMobileMenu}
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-accent text-sm font-bold text-white">
-            A
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-accent">
+            <img src={logo} alt="Atelier Logo" className="h-9 w-9" />
           </span>
           <span className="font-[var(--font-display)] text-xl font-semibold text-[var(--color-ink)]">
-            Atelier
+            FDTC ACADEMY
           </span>
         </a>
 
@@ -46,31 +48,15 @@ export default function Header() {
         <button
           aria-controls="mobile-navigation"
           aria-expanded={isMenuOpen}
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="rounded-md p-2 text-[var(--color-ink)] lg:hidden"
           type="button"
           onClick={toggleMobileMenu}
         >
           {isMenuOpen ? (
-            <svg aria-hidden="true" className="h-6 w-6" viewBox="0 0 24 24">
-              <path
-                d="M6 6L18 18M18 6L6 18"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeWidth="2"
-              />
-            </svg>
+            <X aria-hidden="true" className="h-6 w-6" />
           ) : (
-            <svg aria-hidden="true" className="h-6 w-6" viewBox="0 0 24 24">
-              <path
-                d="M4 7h16M4 12h16M4 17h16"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeWidth="2"
-              />
-            </svg>
+            <Menu aria-hidden="true" className="h-6 w-6" />
           )}
         </button>
       </div>
@@ -78,8 +64,8 @@ export default function Header() {
       <nav
         id="mobile-navigation"
         className={cn(
-          'overflow-hidden border-t border-[var(--color-border-soft)] bg-white lg:hidden',
-          isMenuOpen ? 'max-h-[420px]' : 'max-h-0 border-t-0',
+          "overflow-hidden border-t border-[var(--color-border-soft)] bg-white lg:hidden",
+          isMenuOpen ? "max-h-[420px]" : "max-h-0 border-t-0",
         )}
       >
         <ul className="space-y-1 px-4 py-4 md:px-6">
@@ -95,12 +81,16 @@ export default function Header() {
             </li>
           ))}
           <li className="pt-2">
-            <Button className="w-full" href="#register" onClick={closeMobileMenu}>
+            <Button
+              className="w-full"
+              href="#register"
+              onClick={closeMobileMenu}
+            >
               Register Now
             </Button>
           </li>
         </ul>
       </nav>
     </header>
-  )
+  );
 }
