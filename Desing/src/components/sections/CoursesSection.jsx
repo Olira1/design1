@@ -1,50 +1,76 @@
 import { courses } from '../../data/courses'
-import { resolveImagePath } from '../../utils/imageResolver'
-import Button from '../ui/Button'
 import Card from '../ui/Card'
 import SectionHeading from '../ui/SectionHeading'
 
 export default function CoursesSection() {
   return (
-    <section id="courses" className="bg-[var(--color-cream)] px-4 py-20 md:px-6">
+    <section id="courses" className="bg-[#3a4f74] px-4 py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Training Programs"
           title="Our Training Programs"
-          description="Choose from practical sewing and fashion design programs designed for beginners and future professionals."
+          description="Choose from our practical and career-focused programs."
+          className="[&_*]:text-white"
         />
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
           {courses.map((course) => (
-            <Card key={course.id} interactive className="flex h-full flex-col p-0">
-              <img
-                src={resolveImagePath(course.imageSrc, '')}
-                alt={course.title}
-                className="h-52 w-full rounded-t-3xl object-cover"
-              />
+            <Card
+              key={course.id}
+              interactive
+              className="flex h-full flex-col rounded-xl border-[#d2d3d8] bg-[#f6f6f8] p-4 shadow-none"
+            >
+              <div className="flex items-start gap-2.5">
+                <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f4d8c8] text-[10px] font-bold text-[#cc5b2b]">
+                  {course.title.slice(0, 1)}
+                </span>
+                <div>
+                  <h3 className="font-sans text-[1.55rem] font-extrabold leading-tight text-[#cc5b2b]">
+                    {course.title}
+                  </h3>
+                  <p className="text-xs text-[#595d67]">{course.level}</p>
+                </div>
+              </div>
 
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="mt-4 font-[var(--font-display)] text-2xl text-[var(--color-ink)]">
-                  {course.title}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-7 text-[var(--color-muted)]">
-                  {course.description}
+              <p className="mt-4 text-sm leading-6 text-[#5f646f]">
+                {course.description}
+              </p>
+
+              <p className="mt-4 text-sm font-semibold text-[#666a74]">
+                Class will start on <span className="text-[#3f4350]">{course.startDate}</span>
+              </p>
+
+              <div className="mt-4 text-sm text-[#555a66]">
+                <p>
+                  Total Price: <span className="font-extrabold text-[#cc5b2b]">{course.totalPrice}</span>
                 </p>
+                <p className="mt-1">
+                  If paid in full: <span className="font-extrabold text-[#cc5b2b]">{course.paidInFullPrice}</span>{' '}
+                  <span className="text-[#7a7f89]">{course.discountText}</span>
+                </p>
+              </div>
 
-                <dl className="mt-4 space-y-2 text-sm">
-                  <div className="flex items-center justify-between gap-3 rounded-xl bg-[var(--color-blush)]/40 px-3 py-2">
-                    <dt className="font-semibold text-[var(--color-ink)]">Duration</dt>
-                    <dd className="text-[var(--color-accent)]">{course.duration}</dd>
-                  </div>
-                  <div className="flex items-center justify-between gap-3 rounded-xl border border-[var(--color-border-soft)] px-3 py-2">
-                    <dt className="font-semibold text-[var(--color-ink)]">Level</dt>
-                    <dd className="text-[var(--color-muted)]">{course.level}</dd>
-                  </div>
-                </dl>
+              <div className="mt-4 h-px bg-[#dddfe5]" />
 
-                <Button href="#register" className="mt-6 w-full">
+              <div className="mt-4 flex flex-wrap items-center gap-2.5">
+                <span className="rounded-md border border-[#d0d2d8] bg-[#ecf4ff] px-2.5 py-1 text-[11px] font-semibold text-[#4a78a8]">
+                  {course.deliveryMode}
+                </span>
+                <span className="rounded-md border border-[#d0d2d8] bg-[#fff3ea] px-2.5 py-1 text-[11px] font-semibold text-[#bd6a32]">
+                  {course.duration}
+                </span>
+                <a
+                  href="#register"
+                  className="rounded-full border border-[#b8adb4] px-5 py-1.5 text-xs font-semibold text-[#6e666e] transition hover:border-[#996073] hover:text-[#996073]"
+                >
                   {course.ctaLabel}
-                </Button>
+                </a>
+                <a
+                  href="#courses"
+                  className="rounded-full border border-[#b8adb4] px-4 py-1.5 text-xs font-semibold text-[#6e666e] transition hover:border-[#996073] hover:text-[#996073]"
+                >
+                  {course.secondaryCtaLabel}
+                </a>
               </div>
             </Card>
           ))}

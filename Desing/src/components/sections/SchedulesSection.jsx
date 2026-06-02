@@ -1,18 +1,18 @@
 import { availableSchedules, scheduleCta, trainingModes } from '../../data/schedules'
 import Button from '../ui/Button'
+import Card from '../ui/Card'
 import SectionHeading from '../ui/SectionHeading'
 
 export default function SchedulesSection() {
+  if (!availableSchedules.length || !trainingModes.length) return null
+
   return (
     <section id="schedules" className="bg-white px-4 py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow="Training Schedule"
-          title="Flexible Training Schedules"
-        />
+        <SectionHeading eyebrow="Training Schedule" title="Flexible Training Schedules" />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          <article className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-cream)] p-6">
+        <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <Card className="bg-[var(--color-cream)]">
             <h3 className="font-[var(--font-display)] text-2xl text-[var(--color-ink)]">
               Available Schedules
             </h3>
@@ -26,9 +26,12 @@ export default function SchedulesSection() {
                 </li>
               ))}
             </ul>
-          </article>
+          </Card>
 
-          <article className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-cream)] p-6">
+          <Card className="flex h-full flex-col bg-gradient-hero">
+            <p className="inline-flex w-fit rounded-full border border-[var(--color-accent)]/20 bg-white/75 px-3 py-1 text-xs font-semibold tracking-wide text-[var(--color-accent)]">
+              {scheduleCta.title}
+            </p>
             <h3 className="font-[var(--font-display)] text-2xl text-[var(--color-ink)]">
               Training Modes
             </h3>
@@ -42,20 +45,13 @@ export default function SchedulesSection() {
                 </li>
               ))}
             </ul>
-          </article>
-
-          <article className="rounded-3xl border border-[var(--color-border-soft)] bg-gradient-hero p-6">
-            <h3 className="font-[var(--font-display)] text-2xl text-[var(--color-ink)]">
-              {scheduleCta.title}
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
-              Choose a schedule that works for you and reserve your seat in the
-              next cohort.
+            <p className="mt-5 text-sm leading-7 text-[var(--color-muted)]">
+              Choose a schedule that works for you and reserve your seat in the next cohort.
             </p>
-            <Button href={scheduleCta.href} className="mt-6 w-full">
+            <Button href={scheduleCta.href} className="mt-6 w-full sm:w-auto">
               {scheduleCta.buttonLabel}
             </Button>
-          </article>
+          </Card>
         </div>
       </div>
     </section>

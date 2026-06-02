@@ -36,4 +36,4 @@ export const learningSteps = [
     title: 'Receive Certificate',
     description: 'Graduate with a recognized credential.',
   },
-]
+];

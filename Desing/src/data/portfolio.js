@@ -18,7 +18,7 @@ export const portfolioItems = [
     title: 'Traditional Cultural Clothing',
     category: 'Traditional Wear',
     imageAlt: 'Traditional cultural clothing made during training',
-    imageSrc: './assets/images/image9.jpg',
+    imageSrc: '../assets/images/image9.jpg',
   },
   {
     id: 'fashion-sketches',
@@ -48,4 +48,4 @@ export const portfolioItems = [
     imageAlt: 'Evening dress displayed on a mannequin',
     imageSrc: '../assets/images/image13.jpg',
   },
-]
+];

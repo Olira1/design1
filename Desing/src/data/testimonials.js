@@ -14,4 +14,4 @@ export const testimonials = [
     role: 'Basic Sewing Graduate',
     initials: 'A',
   },
-]
+];

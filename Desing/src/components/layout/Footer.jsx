@@ -1,100 +1,69 @@
-import { footerQuickLinks, socialLinks } from '../../data/navigation'
-import Button from '../ui/Button'
-
 export default function Footer() {
-  const handleNewsletterSubmit = (event) => {
-    event.preventDefault()
-  }
+  const footerColumns = [
+    {
+      title: 'For Business',
+      links: ['Ventilation', 'Design', 'Air conditioning', 'Installation'],
+    },
+    {
+      title: 'For House',
+      links: ['Ventilation', 'Air conditioning', 'Installation'],
+    },
+    {
+      title: 'For Flat',
+      links: ['Ventilation', 'Design', 'Air conditioning', 'Installation'],
+    },
+    {
+      title: 'Info',
+      links: ['About us', 'Works', 'Contacts'],
+    },
+  ]
 
   return (
-    <footer className="border-t border-[var(--color-border-soft)] bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 md:px-6">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          <section>
-            <a href="#hero" className="inline-flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-accent text-sm font-bold text-white">
-                A
-              </span>
-              <span className="font-[var(--font-display)] text-xl font-semibold text-[var(--color-ink)]">
-                Atelier
-              </span>
-            </a>
+    <footer className="relative overflow-hidden bg-[#ececee] pb-8 pt-10 md:pt-14">
+      <div className="relative h-[220px] overflow-visible md:h-[300px]">
+        {/* <h2 className="absolute inset-x-0 bottom-[-3.1rem] z-10 select-none text-center text-[clamp(9rem,36vw,25rem)] font-black uppercase leading-[0.78] tracking-[0.02em] text-transparent [background:linear-gradient(180deg,#ffffff_0%,#dadce0_22%,#8c9098_52%,#34373e_76%,#050607_100%)] bg-clip-text md:bottom-[-4.6rem]">
+          FDTC
+        </h2> */}
+      </div>
 
-            <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
-              A modern fashion design and sewing training institute building the
-              next generation of fashion professionals.
-            </p>
-
-            <div className="mt-5 flex flex-wrap gap-2.5">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="rounded-full border border-[var(--color-border-soft)] px-3 py-1.5 text-xs font-semibold text-[var(--color-muted)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  {social.label}
-                </a>
-              ))}
+      <div className="relative z-0 -mt-24 w-full rounded-t-[3rem] bg-[#040506] px-4 pb-10 pt-32 md:-mt-32 md:rounded-t-[4rem] md:px-6 md:pb-12 md:pt-40">
+        <div className="mx-auto w-full max-w-[1250px]">
+          <div className="grid gap-6 rounded-2xl bg-[#2f3646] p-6 text-white md:grid-cols-[1.25fr_0.65fr] md:items-stretch md:p-0">
+            <div className="md:p-8">
+              <h3 className="text-3xl font-medium leading-tight md:text-4xl">Do you need help?</h3>
+              <p className="mt-3 max-w-xl text-sm leading-6 text-white/65 md:text-[15px]">
+                We will provide detailed information about our services, types of
+                work, and top projects. We will calculate the cost and prepare a
+                commercial proposal.
+              </p>
             </div>
-          </section>
+            <a
+              href="#contact"
+              className="flex items-center justify-center gap-3 rounded-2xl bg-[#3a4357] px-5 py-6 text-lg font-medium text-white transition hover:brightness-110 md:rounded-r-2xl md:rounded-l-none md:px-8"
+            >
+              Get consultation
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+          </div>
 
-          <section>
-            <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--color-ink)]">
-              Quick Links
-            </h3>
-            <ul className="mt-4 space-y-2.5">
-              {footerQuickLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-[var(--color-muted)] transition hover:text-[var(--color-accent)]"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--color-ink)]">
-              Contact
-            </h3>
-            <ul className="mt-4 space-y-2.5 text-sm text-[var(--color-muted)]">
-              <li>+252 61 000 0000</li>
-              <li>hello@atelier.com</li>
-              <li>Fashion District, City Center</li>
-            </ul>
-          </section>
-
-          <section>
-            <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--color-ink)]">
-              Newsletter
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
-              Get updates on new programs and student stories.
-            </p>
-
-            <form className="mt-4 flex gap-2" onSubmit={handleNewsletterSubmit}>
-              <input
-                aria-label="Your email address"
-                className="min-w-0 flex-1 rounded-full border border-[var(--color-border-soft)] px-4 py-2.5 text-sm text-[var(--color-ink)] outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
-                placeholder="Your email"
-                required
-                type="email"
-              />
-              <Button size="sm" type="submit">
-                Join
-              </Button>
-            </form>
-          </section>
-        </div>
-
-        <div className="mt-12 border-t border-[var(--color-border-soft)] pt-6 text-center text-sm text-[var(--color-muted)]">
-          <p>© 2026 Atelier Fashion Institute. All rights reserved.</p>
-          <p className="mt-1">Crafted with care for future fashion professionals.</p>
+          <div className="mt-10 grid grid-cols-2 gap-8 text-white/65 md:grid-cols-4">
+            {footerColumns.map((column) => (
+              <div key={column.title}>
+                <h4 className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
+                  {column.title}
+                </h4>
+                <ul className="mt-4 space-y-2.5">
+                  {column.links.map((link) => (
+                    <li key={link}>
+                      <a href="#" className="text-sm transition hover:text-white">
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

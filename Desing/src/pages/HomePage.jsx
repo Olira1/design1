@@ -26,7 +26,7 @@ export default function HomePage() {
         <HowItWorksSection />
         <SchedulesSection />
         <FAQSection />
-        <RegistrationSection />
+        {/* <RegistrationSection /> */}
         <ContactSection />
         <CTASection />
       </main>

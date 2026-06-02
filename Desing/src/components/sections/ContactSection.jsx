@@ -1,69 +1,93 @@
-import contactImage from '../../assets/images/image11.png'
+import { contactDetails } from '../../data/contact'
 import { socialLinks } from '../../data/navigation'
 import SectionHeading from '../ui/SectionHeading'
 
+const contactIconById = {
+  phone: 'P',
+  whatsapp: 'W',
+  telegram: 'T',
+  email: 'E',
+  address: 'A',
+}
+
+const socialIconByLabel = {
+  Instagram: 'I',
+  Facebook: 'F',
+  Telegram: 'T',
+  TikTok: 'K',
+}
+
 export default function ContactSection() {
+  if (!contactDetails.length) return null
+
   return (
-    <section
-      id="contact"
-      className="bg-[var(--color-cream)] px-4 py-20 md:px-6"
-    >
+    <section id="contact" className="bg-[var(--color-cream)] px-4 py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow="Get In Touch" title="Contact Us" />
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              ["Phone", "+252 61 000 0000"],
-              ["WhatsApp", "+252 61 000 0000"],
-              ["Telegram", "@AtelierInstitute"],
-              ["Email", "hello@atelier.com"],
-              ["Address", "Fashion District, City Center"],
-            ].map(([label, value]) => (
+        <div className="mt-12 grid items-start gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="rounded-3xl border border-[var(--color-border-soft)] bg-white p-4 shadow-sm">
+            {contactDetails.map((item) => (
               <article
-                key={label}
-                className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-5"
+                key={item.id}
+                className="mb-3 flex items-center gap-3 rounded-2xl border border-[var(--color-border-soft)] bg-[#fbfbfb] px-3 py-2.5 last:mb-0"
               >
-                <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
-                  {label}
-                </h3>
-                <p className="mt-2 text-sm text-[var(--color-muted)]">
-                  {value}
-                </p>
+                <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--color-peach)] text-[10px] font-bold text-[var(--color-accent-deep)]">
+                  {contactIconById[item.id] ?? '?'}
+                </span>
+                <div className="min-w-0">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-[#9b8f89]">
+                    {item.label}
+                  </p>
+                  {item.href ? (
+                    <a
+                      className="truncate text-xs text-[var(--color-ink)] transition hover:text-[var(--color-accent)]"
+                      href={item.href}
+                      rel="noreferrer"
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="truncate text-xs text-[var(--color-ink)]">{item.value}</p>
+                  )}
+                </div>
               </article>
             ))}
 
-            <article className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-5 sm:col-span-2">
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
+            <article className="mt-3 rounded-2xl border border-[var(--color-border-soft)] bg-[#fbfbfb] px-3 py-3">
+              <h3 className="text-[10px] font-semibold uppercase tracking-wider text-[#9b8f89]">
                 Follow Us
               </h3>
-              <div className="mt-3 flex flex-wrap gap-2.5">
+              <div className="mt-2.5 flex flex-wrap gap-2">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
-                    className="rounded-full border border-[var(--color-border-soft)] px-3 py-1.5 text-xs font-semibold text-[var(--color-muted)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                    aria-label={social.label}
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[var(--color-border-soft)] bg-white text-[10px] font-semibold text-[var(--color-muted)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
                     rel="noreferrer"
                     target="_blank"
                   >
-                    {social.label}
+                    {socialIconByLabel[social.label] ?? social.label.slice(0, 1)}
                   </a>
                 ))}
               </div>
             </article>
           </div>
 
-          <div className="[perspective:1000px]">
-            <div className="overflow-hidden rounded-3xl border border-[var(--color-border-soft)] bg-white [perspective:1000px] [transform:rotateY(-6deg)_rotateX(0deg)_rotateZ(0deg)] shadow-[-10px_20px_30px_rgba(0,0,0,0.3)]">
-              <img
-                src={contactImage}
-                alt="Fashion designer working in a tailoring studio"
-                className="h-full w-full object-cover hover:scale-105 transition-all duration-300"
+          <div>
+            <div className="overflow-hidden rounded-2xl border border-[var(--color-border-soft)] bg-white shadow-sm">
+              <iframe
+                title="Atelier location map"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=45.23%2C2.00%2C45.45%2C2.20&layer=mapnik"
+                className="h-[270px] w-full md:h-[300px]"
+                loading="lazy"
               />
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }

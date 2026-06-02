@@ -4,10 +4,16 @@ import SectionHeading from '../ui/SectionHeading'
 export default function TestimonialsSection() {
   const testimonial = testimonials[0]
 
+  if (!testimonial) return null
+
   return (
-    <section className="bg-white px-4 py-20 md:px-6">
+    <section id="testimonials" className="bg-white px-4 py-20 md:px-6">
       <div className="mx-auto max-w-4xl">
-        <SectionHeading eyebrow="Testimonials" title="What Our Students Say" />
+        <SectionHeading
+          eyebrow="Testimonials"
+          title="What Our Students Say"
+          description="Real feedback from learners who built practical sewing and fashion design skills through our hands-on training."
+        />
 
         <figure className="mt-12 rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-cream)] p-8 text-center md:p-12">
           <blockquote className="font-[var(--font-display)] text-2xl leading-relaxed text-[var(--color-ink)] md:text-4xl">

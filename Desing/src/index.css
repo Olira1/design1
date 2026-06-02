@@ -129,4 +129,21 @@ textarea {
   .text-balance {
     text-wrap: balance;
   }
+
+  .portfolio-scroll {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .portfolio-scroll > div > article {
+    scroll-snap-align: center;
+  }
+
+  .portfolio-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-scroll {
+    scrollbar-width: none;
+  }
 }
