@@ -1,3 +1,9 @@
+/*
+  Step 3: Build Shared UI Components
+  ------------------------
+  This file creates a reusable section heading component for the landing page.
+*/
+
 import Badge from './Badge'
 import { cn } from '../../utils/cn'
 

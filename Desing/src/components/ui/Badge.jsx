@@ -1,5 +1,14 @@
+/*
+  Step 3: Build Shared UI Components
+  ------------------------
+  This file creates a reusable badge component for the landing page.
+
+  The Badge.jsx file defines a reusable Badge UI component. Its purpose is to render a small, visually distinct pill-shaped label—typically used to highlight keywords or categories (like "Training Programs") across the site. It uses Tailwind CSS for styling and ensures consistent brand appearance and accessibility by centering content, adding a colored dot, and applying accent colors.
+*/
+
 import { cn } from '../../utils/cn'
 
+ 
 export default function Badge({ children, className }) {
   return (
     <span

@@ -1,3 +1,8 @@
+/*
+  Step 3: Build Shared UI Components
+  ------------------------
+  This file creates a reusable button component for the landing page.
+*/
 import { cn } from '../../utils/cn'
 
 const buttonVariants = {
