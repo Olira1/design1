@@ -107,6 +107,13 @@ export default function HeroSection() {
               alt="FDTC Academy logo"
               className="h-13 w-13 rounded-full border border-[var(--color-accent)]/70 object-cover"
             />
+            <span
+              className={`text-lg font-extrabold tracking-wide ${
+                isHeaderSolid ? "text-[#C23B6F]" : "text-[#C23B6F]"
+              }`}
+            >
+              IQ
+            </span>
           </a>
 
           <nav className="hidden items-center gap-18 rounded-full border border-white/15 bg-black/35 px-5 py-2 backdrop-blur-sm lg:flex">

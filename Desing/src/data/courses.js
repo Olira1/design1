@@ -13,7 +13,7 @@ import image5 from "../assets/images/image5.png";
 export const courses = [
   {
     id: "ai-powered-fullstack",
-    title: "AI Powered Fullstack Application Development",
+    title: "Basic Sewing Training",
     duration: "6 Months",
     level: "class",
     description:
@@ -29,7 +29,7 @@ export const courses = [
   },
   {
     id: "aws",
-    title: "AWS",
+    title: "Fashion Design",
     duration: "3 Months",
     level: "class",
     description:
@@ -45,7 +45,7 @@ export const courses = [
   },
   {
     id: "database-administration",
-    title: "Database Administration",
+    title: "Pattern Making",
     duration: "3 Months",
     level: "class",
     description:
@@ -61,7 +61,7 @@ export const courses = [
   },
   {
     id: "mulesoft-development",
-    title: "MuleSoft Development",
+    title: "Bridal & Traditional Wear",
     duration: "3 Months",
     level: "class",
     description:

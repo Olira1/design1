@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# telegram bot token and group id
+TELEGRAM_BOT_TOKEN= 8880214970:AAG5Zv_FMGy0HdjlM9q9xXUH8bTauSbDoGY
+TELEGRAM_GROUP_ID= -1003791741404
+
+https://api.telegram.org/bot8880214970:AAG5Zv_FMGy0HdjlM9q9xXUH8bTauSbDoGY/sendMessage?chat_id=-1003791741404&text=Test

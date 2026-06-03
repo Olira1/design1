@@ -4,7 +4,7 @@ import SectionHeading from '../ui/SectionHeading'
 
 export default function CoursesSection() {
   return (
-    <section id="courses" className="bg-[#3a4f74] px-4 py-20 md:px-6">
+    <section id="courses" className="bg-[#5E5E5E] px-4 py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Training Programs"
@@ -46,15 +46,22 @@ export default function CoursesSection() {
               </p>
 
               <p className="mt-4 text-sm font-semibold text-[#666a74]">
-                Class will start on <span className="text-[#3f4350]">{course.startDate}</span>
+                Class will start on{" "}
+                <span className="text-[#3f4350]">{course.startDate}</span>
               </p>
 
               <div className="mt-4 text-sm text-[#555a66]">
                 <p>
-                  Total Price: <span className="font-extrabold text-[#cc5b2b]">{course.totalPrice}</span>
+                  Total Price:{" "}
+                  <span className="font-extrabold text-[#cc5b2b]">
+                    {course.totalPrice}
+                  </span>
                 </p>
                 <p className="mt-1">
-                  If paid in full: <span className="font-extrabold text-[#cc5b2b]">{course.paidInFullPrice}</span>{' '}
+                  If paid in full:{" "}
+                  <span className="font-extrabold text-[#cc5b2b]">
+                    {course.paidInFullPrice}
+                  </span>{" "}
                   <span className="text-[#7a7f89]">{course.discountText}</span>
                 </p>
               </div>
@@ -86,5 +93,5 @@ export default function CoursesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

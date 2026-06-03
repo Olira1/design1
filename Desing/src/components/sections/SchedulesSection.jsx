@@ -28,7 +28,7 @@ export default function SchedulesSection() {
   if (!availableSchedules.length || !trainingModes.length) return null
 
   return (
-    <section id="schedules" className="bg-[#3a4f74] px-4 py-20 md:px-6">
+    <section id="schedules" className="bg-[#5E5E5E] px-4 py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Training Schedule"
@@ -48,7 +48,10 @@ export default function SchedulesSection() {
                   className="border-b border-[var(--color-border-soft)] pb-4 last:border-b-0 last:pb-0"
                 >
                   <p className="flex items-center gap-2 text-base font-semibold text-[var(--color-ink)]">
-                    <span className="text-[var(--color-accent)]" aria-hidden="true">
+                    <span
+                      className="text-[var(--color-accent)]"
+                      aria-hidden="true"
+                    >
                       {getScheduleIcon(schedule.title)}
                     </span>
                     {schedule.title}
@@ -74,7 +77,10 @@ export default function SchedulesSection() {
                   key={mode}
                   className="flex items-start gap-2 text-sm text-[var(--color-muted)]"
                 >
-                  <span className="mt-0.5 text-[var(--color-accent)]" aria-hidden="true">
+                  <span
+                    className="mt-0.5 text-[var(--color-accent)]"
+                    aria-hidden="true"
+                  >
                     {getTrainingModeIcon(mode)}
                   </span>
                   <span>{mode}</span>
