@@ -1,8 +1,21 @@
 import aboutImage from '../../assets/images/evan.png'
+import { BookOpen, CalendarClock, GraduationCap, Scissors, Shirt } from 'lucide-react'
 import { aboutHighlights } from '../../data/features'
 import SectionHeading from '../ui/SectionHeading'
 
 export default function AboutSection() {
+  const getHighlightIcon = (highlight) => {
+    const iconClasses = 'h-3.5 w-3.5'
+
+    if (highlight === 'Practical hands-on learning') return <Scissors className={iconClasses} />
+    if (highlight === 'Experienced instructors') return <GraduationCap className={iconClasses} />
+    if (highlight === 'Modern sewing equipment') return <Shirt className={iconClasses} />
+    if (highlight === 'Beginner-friendly programs') return <BookOpen className={iconClasses} />
+    if (highlight === 'Flexible class schedules') return <CalendarClock className={iconClasses} />
+
+    return <Scissors className={iconClasses} />
+  }
+
   return (
     <section id="about" className="bg-white px-4 py-20 md:px-6 mt-20 pt-60">
       <div>
@@ -23,13 +36,13 @@ export default function AboutSection() {
             {aboutHighlights.map((highlight) => (
               <li
                 key={highlight}
-                className="flex items-start gap-3 text-[var(--color-muted)]"
+                className="flex items-start gap-3 "
               >
                 <span
-                  className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-blush)] text-xs text-[var(--color-accent)]"
+                  className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full  text-xs text-[var(--color-accent)]"
                   aria-hidden="true"
                 >
-                  ✓
+                  {getHighlightIcon(highlight)}
                 </span>
                 <span>{highlight}</span>
               </li>

@@ -136,15 +136,15 @@ export default function HeroSection() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 pt-24 md:px-6 md:pt-28">
         <div className="mx-auto max-w-4xl pb-56 pt-20 text-center md:pb-64 md:pt-24">
           <h1 className="font-sans text-5xl font-bold leading-tight md:text-7xl text-white">
-            Learn{" "}
+            Learn Fashion Design{" "}
             <span className="font-[var(--font-display)] italic text-[var(--color-accent)]">
-              Fashion Design
+              From Industry Experts
             </span>
             <br />
-            From Industry Experts
+            {/* From Industry Experts */}
           </h1>
 
-          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-white/80 md:text-base">
+          <p className="mx-auto mt-6 max-w-3xl text-base font-semibold leading-7 text-white/80 md:text-base">
             Join our immersive in-person fashion design course and master
             creative skills, modern design techniques, and real-world project
             building in a collaborative environment.
@@ -156,8 +156,8 @@ export default function HeroSection() {
             </Button>
             <Button
               href="#schedules"
-              variant="secondary"
-              className="min-w-40 border-white/20 bg-white/20 text-white hover:bg-white/25 hover:text-white"
+              // variant="secondary"
+              className="min-w-40 border-white/20 bg-gradient-to-r from-[#F94F95] to-[#000000] text-white hover:opacity-90"
             >
               View Schedule
             </Button>

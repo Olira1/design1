@@ -1,6 +1,6 @@
 import { testimonials } from '../../data/testimonials'
 import SectionHeading from '../ui/SectionHeading'
-import heroBackground from '../../assets/images/herosection.png'
+import heroBackground from "../../assets/images/testmonial4.png";
 
 export default function TestimonialsSection() {
   const testimonial = testimonials[0]
@@ -16,7 +16,7 @@ export default function TestimonialsSection() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 mx-auto max-w-4xl">
         <SectionHeading

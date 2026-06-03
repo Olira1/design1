@@ -1,9 +1,30 @@
+import { CalendarDays, Clock3, GraduationCap, Hammer, Sun, Users } from 'lucide-react'
 import { availableSchedules, scheduleCta, trainingModes } from '../../data/schedules'
 import Button from '../ui/Button'
 import Card from '../ui/Card'
 import SectionHeading from '../ui/SectionHeading'
 
 export default function SchedulesSection() {
+  const getScheduleIcon = (title) => {
+    const iconClasses = 'h-4 w-4'
+
+    if (title === 'Morning Classes') return <Sun className={iconClasses} />
+    if (title === 'Afternoon Classes') return <Clock3 className={iconClasses} />
+    if (title === 'Weekend Classes') return <CalendarDays className={iconClasses} />
+
+    return <CalendarDays className={iconClasses} />
+  }
+
+  const getTrainingModeIcon = (mode) => {
+    const iconClasses = 'h-4 w-4'
+
+    if (mode === 'Physical Classroom Training') return <GraduationCap className={iconClasses} />
+    if (mode === 'Practical Workshop Sessions') return <Hammer className={iconClasses} />
+    if (mode === 'Group-Based Learning') return <Users className={iconClasses} />
+
+    return <GraduationCap className={iconClasses} />
+  }
+
   if (!availableSchedules.length || !trainingModes.length) return null
 
   return (
@@ -26,7 +47,10 @@ export default function SchedulesSection() {
                   key={schedule.title}
                   className="border-b border-[var(--color-border-soft)] pb-4 last:border-b-0 last:pb-0"
                 >
-                  <p className="text-base font-semibold text-[var(--color-ink)]">
+                  <p className="flex items-center gap-2 text-base font-semibold text-[var(--color-ink)]">
+                    <span className="text-[var(--color-accent)]" aria-hidden="true">
+                      {getScheduleIcon(schedule.title)}
+                    </span>
                     {schedule.title}
                   </p>
                   <p className="text-sm text-[var(--color-muted)]">
@@ -50,11 +74,8 @@ export default function SchedulesSection() {
                   key={mode}
                   className="flex items-start gap-2 text-sm text-[var(--color-muted)]"
                 >
-                  <span
-                    className="mt-1 text-[var(--color-accent)]"
-                    aria-hidden="true"
-                  >
-                    •
+                  <span className="mt-0.5 text-[var(--color-accent)]" aria-hidden="true">
+                    {getTrainingModeIcon(mode)}
                   </span>
                   <span>{mode}</span>
                 </li>

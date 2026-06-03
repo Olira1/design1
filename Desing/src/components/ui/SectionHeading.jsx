@@ -22,7 +22,7 @@ export default function SectionHeading({
 }) {
   return (
     <div className={cn("max-w-3xl", alignments[align], className)}>
-      {eyebrow ? <Badge>{eyebrow}</Badge> : null }
+      {eyebrow ? <Badge>{eyebrow}</Badge> : null}
 
       <Heading
         className={cn(
@@ -35,11 +35,11 @@ export default function SectionHeading({
           "text-[var(--color-ink)] md:text-5xl",
         )}
       >
-        {title ? <span className="text-[#0b193]">{title}</span> : null}
+        {title ? <span className="text-[#211816]">{title}</span> : null}
       </Heading>
 
       {description ? (
-        <p className="mt-5 text-base leading-8 text-[#67748E] md:text-lg">
+        <p className="mt-5 text-base leading-8 text-[#6F625E]  md:text-lg">
           {description}
         </p>
       ) : null}
