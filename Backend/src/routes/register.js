@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { sendRegistrationToTelegram } from "../services/telegram.js";
 
 const router = Router();
 
@@ -93,8 +94,8 @@ function validateRegistrationPayload(payload) {
   };
 }
 
-router.post("/", (req, res) => {
-  const { errors } = validateRegistrationPayload(req.body);
+router.post("/", async (req, res) => {
+  const { errors, sanitized } = validateRegistrationPayload(req.body);
 
   if (errors.length > 0) {
     return res.status(400).json({
@@ -104,10 +105,26 @@ router.post("/", (req, res) => {
     });
   }
 
-  return res.status(200).json({
-    success: true,
-    message: "Registration validated successfully",
-  });
+  try {
+    await sendRegistrationToTelegram(sanitized);
+
+    return res.status(200).json({
+      success: true,
+      message: "Registration submitted successfully",
+    });
+  } catch (error) {
+    if (error.code === "TELEGRAM_CONFIG_MISSING") {
+      return res.status(500).json({
+        success: false,
+        message: "Server configuration error",
+      });
+    }
+
+    return res.status(502).json({
+      success: false,
+      message: "Failed to deliver registration notification",
+    });
+  }
 });
 
 export default router;
