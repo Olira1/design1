@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import { courseOptions } from '../../data/courses'
 import sideImage from '../../assets/images/evan.png'
 import Button from '../ui/Button'
@@ -6,7 +7,96 @@ import SectionHeading from '../ui/SectionHeading'
 const inputClasses =
   'w-full rounded-xl border border-[var(--color-border-soft)] bg-white px-4 py-3 text-sm text-[var(--color-ink)] outline-none transition focus:border-[var(--color-accent)]'
 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const phoneRegex = /^\+?[0-9]{8,15}$/
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || ''
+
+function getRegistrationApiUrl() {
+  if (!apiBaseUrl) return '/api/register'
+  return `${apiBaseUrl.replace(/\/$/, '')}/api/register`
+}
+
+function normalizeFormValues(formData) {
+  return {
+    fullName: String(formData.get('fullName') || '').trim(),
+    phone: String(formData.get('phone') || '')
+      .replace(/[\s()-]/g, '')
+      .trim(),
+    email: String(formData.get('email') || '').trim(),
+    gender: String(formData.get('gender') || '').trim(),
+    age: Number(formData.get('age')),
+    city: String(formData.get('city') || '').trim(),
+    course: String(formData.get('course') || '').trim(),
+    level: String(formData.get('level') || '').trim(),
+    schedule: String(formData.get('schedule') || '').trim(),
+    message: String(formData.get('message') || '').trim(),
+    source: String(formData.get('source') || '').trim(),
+  }
+}
+
 export default function RegistrationSection() {
+  const [status, setStatus] = useState({ type: 'idle', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const statusClasses = useMemo(() => {
+    if (status.type === 'success') {
+      return 'border border-emerald-300 bg-emerald-50 text-emerald-700'
+    }
+    if (status.type === 'error') {
+      return 'border border-red-300 bg-red-50 text-red-700'
+    }
+    return ''
+  }, [status.type])
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    setStatus({ type: 'idle', message: '' })
+
+    const form = event.currentTarget
+    const payload = normalizeFormValues(new FormData(form))
+
+    if (!emailRegex.test(payload.email)) {
+      setStatus({ type: 'error', message: 'Please enter a valid email address.' })
+      return
+    }
+
+    if (!phoneRegex.test(payload.phone)) {
+      setStatus({
+        type: 'error',
+        message: 'Please enter a valid phone number (8-15 digits, optional +).',
+      })
+      return
+    }
+
+    setIsSubmitting(true)
+    try {
+      const response = await fetch(getRegistrationApiUrl(), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      const result = await response.json().catch(() => ({}))
+      if (!response.ok) {
+        const firstError = result?.errors?.[0]?.message
+        throw new Error(firstError || result?.message || 'Registration failed. Please try again.')
+      }
+
+      setStatus({
+        type: 'success',
+        message: 'Registration submitted successfully. We will contact you soon.',
+      })
+      form.reset()
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: error.message || 'Registration failed. Please try again.',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section id="register" className="bg-[#f6f7fa] px-4 py-12 md:px-6 md:py-16">
       <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-[var(--color-border-soft)] bg-white shadow-[0_18px_45px_rgba(24,27,38,0.12)]">
@@ -21,7 +111,7 @@ export default function RegistrationSection() {
 
             <form
               className="mt-8 space-y-5 rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-cream)] p-6 md:p-8"
-              onSubmit={(event) => event.preventDefault()}
+              onSubmit={handleSubmit}
             >
               <div className="grid gap-5 md:grid-cols-2">
             <label className="md:col-span-2">
@@ -29,6 +119,19 @@ export default function RegistrationSection() {
                 Full Name
               </span>
               <input className={inputClasses} name="fullName" placeholder="Your full name" required type="text" />
+            </label>
+
+            <label className="md:col-span-2">
+              <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
+                Email Address
+              </span>
+              <input
+                className={inputClasses}
+                name="email"
+                placeholder="you@example.com"
+                required
+                type="email"
+              />
             </label>
 
             <label>
@@ -144,9 +247,15 @@ export default function RegistrationSection() {
                 </div>
               </fieldset>
 
-              <Button className="w-full md:w-auto" type="submit">
-                Submit Registration
+              <Button className="w-full md:w-auto" type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit Registration'}
               </Button>
+
+              {status.type !== 'idle' ? (
+                <p className={`rounded-xl px-4 py-3 text-sm font-medium ${statusClasses}`}>
+                  {status.message}
+                </p>
+              ) : null}
             </form>
           </div>
 
