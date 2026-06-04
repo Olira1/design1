@@ -17,9 +17,9 @@ export default function AboutSection() {
   }
 
   return (
-    <section id="about" className="bg-white px-4 py-20 md:px-6 mt-20 pt-60">
+    <section id="about" className="mt-8 bg-white px-4 py-16 sm:mt-10 sm:py-20 md:px-6 md:mt-50">
       <div>
-        <h2 className="mx-auto text-4xl font-bold text-center pb-15 bg-gradient-to-r from-[#F94F95] to-[#000000] bg-clip-text text-transparent">
+        <h2 className="mx-auto pb-10 text-center text-3xl font-bold bg-gradient-to-r from-[#F94F95] to-[#000000] bg-clip-text text-transparent sm:pb-12 sm:text-4xl">
           About Our Institute
         </h2>
       </div>
@@ -50,8 +50,8 @@ export default function AboutSection() {
           </ul>
         </div>
 
-        <div className="[perspective:1000px] w-full max-w-500px justify-self-center">
-          <div className="overflow-hidden rounded-3xl border border-[var(--color-border-soft)] shadow-[-10px_20px_30px_rgba(0,0,0,0.3)] [transform:rotateY(-6deg)_rotateX(0deg)_rotateZ(0deg)]">
+        <div className="[perspective:1000px] w-full max-w-[500px] justify-self-center">
+          <div className="overflow-hidden rounded-3xl border border-[var(--color-border-soft)] shadow-[-10px_20px_30px_rgba(0,0,0,0.3)] [transform:rotateY(-2deg)_rotateX(0deg)_rotateZ(0deg)] sm:[transform:rotateY(-6deg)_rotateX(0deg)_rotateZ(0deg)]">
             <img
               src={aboutImage}
               alt="Instructor teaching fashion students in a sewing class"

@@ -68,10 +68,10 @@ export default function CoursesSection() {
 
               <div className="mt-4 h-px bg-[#dddfe5]" />
 
-              <div className="mt-4 flex flex-wrap items-center gap-2.5">
-                <span className="rounded-md border border-[#d0d2d8] bg-[#ecf4ff] px-2.5 py-1 text-[11px] font-semibold text-[#4a78a8]">
+              <div className="mt-4 mx-auto flex flex-wrap items-center gap-2.5">
+                {/* <span className="rounded-md border border-[#d0d2d8] bg-[#ecf4ff] px-2.5 py-1 text-[11px] font-semibold text-[#4a78a8]">
                   {course.deliveryMode}
-                </span>
+                </span> */}
                 <span className="rounded-md border border-[#d0d2d8] bg-[#fff3ea] px-2.5 py-1 text-[11px] font-semibold text-[#bd6a32]">
                   {course.duration}
                 </span>
@@ -81,12 +81,12 @@ export default function CoursesSection() {
                 >
                   {course.ctaLabel}
                 </a>
-                <a
+                {/* <a
                   href="#courses"
                   className="rounded-full border border-[#b8adb4] px-4 py-1.5 text-xs font-semibold text-[#6e666e] transition hover:border-[#996073] hover:text-[#996073]"
                 >
                   {course.secondaryCtaLabel}
-                </a>
+                </a> */}
               </div>
             </Card>
           ))}

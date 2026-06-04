@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
+import { Menu, X } from 'lucide-react'
 import logo from '../../assets/images/logo.jpg'
 import heroBackground from '../../assets/images/herosection.png'
 import Button from '../ui/Button'
 import video from '../../assets/Video/video2.mp4'
+import { cn } from '../../utils/cn'
 
 export default function HeroSection() {
   const heroRef = useRef(null)
   const [isHeaderSolid, setIsHeaderSolid] = useState(false)
   const [activeNavLink, setActiveNavLink] = useState('#hero')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const navigationLinks = [
     ['Home', '#hero'],
@@ -17,6 +20,9 @@ export default function HeroSection() {
     ['FAQ', '#faq'],
     ['Contact', '#contact'],
   ]
+
+  const toggleMobileMenu = () => setIsMobileMenuOpen((open) => !open)
+  const closeMobileMenu = () => setIsMobileMenuOpen(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,7 +81,7 @@ export default function HeroSection() {
     <section
       id="hero"
       ref={heroRef}
-      className="relative mb-20 overflow-visible bg-black pb-28 text-white md:pb-36"
+      className="relative mb-16 overflow-visible bg-black pb-20 text-white sm:mb-20 sm:pb-24 md:pb-32"
     >
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -100,15 +106,19 @@ export default function HeroSection() {
             : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 md:px-6 md:py-5">
-          <a href="#hero" className="inline-flex items-center gap-2.5">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-3 sm:gap-4 sm:px-4 sm:py-4 md:px-6 md:py-5">
+          <a
+            href="#hero"
+            className="inline-flex items-center gap-2.5"
+            onClick={closeMobileMenu}
+          >
             <img
               src={logo}
               alt="FDTC Academy logo"
-              className="h-13 w-13 rounded-full border border-[var(--color-accent)]/70 object-cover"
+              className="h-10 w-10 rounded-full border border-[var(--color-accent)]/70 object-cover sm:h-12 sm:w-12"
             />
             <span
-              className={`text-lg font-extrabold tracking-wide ${
+              className={`text-sm font-extrabold tracking-wide sm:text-lg ${
                 isHeaderSolid ? "text-[#C23B6F]" : "text-[#C23B6F]"
               }`}
             >
@@ -134,15 +144,73 @@ export default function HeroSection() {
             ))}
           </nav>
 
-          <Button href="/register" size="sm" className="min-w-32">
-            Register Now
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              href="/register"
+              size="sm"
+              className="min-w-0 px-4 py-2 text-xs sm:min-w-32 sm:text-sm"
+            >
+              Register Now
+            </Button>
+
+            <button
+              type="button"
+              aria-label={
+                isMobileMenuOpen
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
+              }
+              aria-controls="hero-mobile-navigation"
+              aria-expanded={isMobileMenuOpen}
+              onClick={toggleMobileMenu}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/25 bg-black/35 text-white backdrop-blur-sm transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] lg:hidden"
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
+          </div>
         </div>
+
+        <nav
+          id="hero-mobile-navigation"
+          className={cn(
+            "overflow-hidden border-t border-white/15 bg-black/75 backdrop-blur-md transition-all duration-300 lg:hidden",
+            isMobileMenuOpen
+              ? "max-h-[380px] opacity-100"
+              : "max-h-0 border-t-0 opacity-0",
+          )}
+        >
+          <ul className="space-y-1 px-3 py-3 sm:px-4">
+            {navigationLinks.map(([label, href]) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  aria-current={activeNavLink === href ? "page" : undefined}
+                  onClick={() => {
+                    setActiveNavLink(href);
+                    closeMobileMenu();
+                  }}
+                  className={cn(
+                    "block rounded-md px-3 py-2 text-sm transition-colors",
+                    activeNavLink === href
+                      ? "bg-white/10 text-[var(--color-accent)]"
+                      : "text-white/90 hover:bg-white/10 hover:text-[var(--color-accent)]",
+                  )}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </header>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 pt-24 md:px-6 md:pt-28">
-        <div className="mx-auto max-w-4xl pb-56 pt-20 text-center md:pb-64 md:pt-24">
-          <h1 className="font-sans text-5xl font-bold leading-tight md:text-7xl text-white">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pt-24 sm:pt-28 md:px-6 md:pt-28">
+        <div className="mx-auto max-w-4xl pb-24 pt-14 text-center sm:pb-32 sm:pt-20 md:pb-60 md:pt-40">
+          <h1 className="font-sans text-3xl font-bold leading-tight text-white sm:text-4xl md:text-6xl lg:text-7xl">
             Learn Fashion Design{" "}
             <span className="font-[var(--font-display)] italic text-[var(--color-accent)]">
               From Industry Experts
@@ -151,20 +219,20 @@ export default function HeroSection() {
             {/* From Industry Experts */}
           </h1>
 
-          <p className="mx-auto mt-6 max-w-3xl text-base font-semibold leading-7 text-white/80 md:text-base">
+          <p className="mx-auto mt-5 max-w-3xl text-sm font-semibold leading-6 text-white/80 sm:text-base md:mt-6 md:leading-7">
             Join our immersive in-person fashion design course and master
             creative skills, modern design techniques, and real-world project
             building in a collaborative environment.
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button href="/register" className="min-w-40">
+          <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-10 sm:gap-4">
+            <Button href="/register" className="min-w-[150px] sm:min-w-40">
               Register Now
             </Button>
             <Button
               href="#schedules"
               // variant="secondary"
-              className="min-w-40 border-white/20 bg-gradient-to-r from-[#F94F95] to-[#000000] text-white hover:opacity-90"
+              className="min-w-[150px] border-white/20 bg-gradient-to-r from-[#F94F95] to-[#000000] text-white hover:opacity-90 sm:min-w-40"
             >
               View Schedule
             </Button>
@@ -186,10 +254,10 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      <div className="absolute inset-x-0 bottom-6 z-20 px-4 md:-bottom-55 md:px-6">
+      <div className="relative z-20 mt-6 px-4 sm:mt-8 md:-mt-8 md:px-6 lg:-mt-14">
         <div className="mx-auto max-w-5xl text-center">
-          <div className="rounded-3xl border border-[var(--color-accent)]/25 bg-white/70 p-6 shadow-[0_10px_30px_rgba(248,79,149,0.15)] backdrop-blur-sm md:p-8">
-            <div className="grid gap-6 md:grid-cols-3 md:gap-0">
+          <div className="rounded-2xl border border-[var(--color-accent)]/25 bg-white/70 p-4 shadow-[0_10px_30px_rgba(248,79,149,0.15)] backdrop-blur-sm sm:rounded-3xl sm:p-6 md:p-8 md:-mb-85 md:min-h-100">
+            <div className=" grid gap-6 md:grid-cols-3 md:gap-0">
               {[
                 [
                   "22",
@@ -209,15 +277,15 @@ export default function HeroSection() {
               ].map(([number, title, description], index) => (
                 <article
                   key={`${number}-${index}`}
-                  className="px-5 md:border-r md:border-[var(--color-border-soft)] md:last:border-r-0"
+                  className="px-2 sm:px-4 md:border-r md:border-[var(--color-border-soft)] md:last:border-r-0 md:px-5"
                 >
-                  <p className="font-sans text-5xl font-bold text-[#8a2108]">
+                  <p className="font-sans text-3xl font-bold text-[#8a2108] sm:text-4xl md:text-5xl">
                     {number}
                   </p>
-                  <h3 className="mt-3 text-3xl font-semibold text-[var(--color-ink)]">
+                  <h3 className="mt-2 text-xl font-semibold text-[var(--color-ink)] sm:mt-3 sm:text-2xl md:text-3xl">
                     {title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-[var(--color-muted)] md:text-base">
+                  <p className="mt-2 text-sm leading-6 text-[var(--color-muted)] md:mt-3 md:text-base md:leading-7">
                     {description}
                   </p>
                 </article>

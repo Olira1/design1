@@ -1,7 +1,7 @@
-import image2 from "../assets/images/image2.png";
-import image3 from "../assets/images/image3.png";
-import image4 from "../assets/images/image4.png";
-import image5 from "../assets/images/image5.png";
+import image2 from "../assets/images/image3.png";
+import image3 from "../assets/images/image4.png";
+import image4 from "../assets/images/image5.png";
+import image5 from "../assets/images/image6.png";
 
 /*
   Step 2: Courses data
@@ -17,7 +17,7 @@ export const courses = [
     duration: "6 Months",
     level: "class",
     description:
-      "Learn to build AI Powered Application from the ground up, starting with the fundamentals and advancing to enterprise-scale deployment.",
+      "Learn sewing fundamentals and machine usage from the ground up.",
     image: image2,
     startDate: "Jul 25th, 2026",
     totalPrice: "2400.00",
@@ -33,7 +33,7 @@ export const courses = [
     duration: "3 Months",
     level: "class",
     description:
-      "Crafted to train participants how to manage cloud infrastructure using Amazon Web Services (AWS).",
+      "Master clothing design principles and unlock fashion creativity.",
     image: image3,
     startDate: "Jun 27th, 2026",
     totalPrice: "1200.00",
@@ -49,7 +49,7 @@ export const courses = [
     duration: "3 Months",
     level: "class",
     description:
-      "Designed to equip students with the knowledge and skills necessary to manage and maintain SQL Server 2022 databases.",
+      "Professional clothing measurement and precise cutting techniques.",
     image: image4,
     startDate: "Jun 27th, 2026",
     totalPrice: "1200.00",
@@ -65,7 +65,7 @@ export const courses = [
     duration: "3 Months",
     level: "class",
     description:
-      "Aims to prepare participants for creating and integrating APIs and applications within the MuleSoft platform.",
+      "Design and sew elegant cultural, ceremonial, and bridal outfits.",
     image: image5,
     startDate: "Jun 27th, 2026",
     totalPrice: "1200.00",
