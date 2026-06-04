@@ -108,7 +108,7 @@ export default function RegistrationSection({ compact = false }) {
           : 'bg-[#f6f7fa] px-3 py-10 sm:px-4 sm:py-12 md:px-6 md:py-16'
       }
     >
-      <div className="mx-auto h-150 max-w-7xl overflow-hidden rounded-3xl border border-[var(--color-border-soft)] bg-white shadow-[0_18px_45px_rgba(24,27,38,0.12)]">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-[var(--color-border-soft)] bg-white shadow-[0_18px_45px_rgba(24,27,38,0.12)] md:h-150">
         <div className="grid lg:grid-cols-2">
           <div className={compact ? 'p-3 sm:p-4 md:p-5 lg:p-6' : 'p-4 sm:p-6 md:p-8 lg:p-10'}>
             <SectionHeading

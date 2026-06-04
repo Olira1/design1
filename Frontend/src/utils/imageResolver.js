@@ -10,7 +10,6 @@ export function resolveImagePath(imageSrc, fallback = '') {
     .replace(/^\.?\.\//, '')
     .replace(/^\.?\.\.\//, '')
     .replace('assets/images/', '')
-    .replace(/\.jpg$/i, '.png')
 
   const directKey = Object.keys(imageModules).find((key) =>
     key.endsWith(normalized),

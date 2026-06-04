@@ -4,9 +4,9 @@ import { resolveImagePath } from '../../utils/imageResolver'
 import SectionHeading from '../ui/SectionHeading'
 
 export default function PortfolioSection() {
-  const displayItems = portfolioItems.slice(0, 6)
-  const cardTilt = ['-rotate-12', '-rotate-3', 'rotate-0', 'rotate-6', 'rotate-12', 'rotate-2']
-  const cardDepth = ['[transform:rotateY(-7deg)_rotateX(6deg)]', '[transform:rotateY(-4deg)_rotateX(6deg)]', '[transform:rotateY(0deg)_rotateX(6deg)]', '[transform:rotateY(4deg)_rotateX(6deg)]', '[transform:rotateY(7deg)_rotateX(6deg)]', '[transform:rotateY(3deg)_rotateX(6deg)]']
+  const displayItems = portfolioItems.slice(0, 8)
+  const cardTilt = ['rotate-0', 'rotate-0', 'rotate-0', 'rotate-0', 'rotate-0', 'rotate-0']
+  const cardDepth = ['[transform:rotateY(0deg)_rotateX(0deg)]', '[transform:rotateY(0deg)_rotateX(0deg)]', '[transform:rotateY(0deg)_rotateX(0deg)]', '[transform:rotateY(0deg)_rotateX(0deg)]', '[transform:rotateY(0deg)_rotateX(0deg)]', '[transform:rotateY(0deg)_rotateX(0deg)]']
   const [activeIndex, setActiveIndex] = useState(0)
   const scrollContainerRef = useRef(null)
   const cardRefs = useRef([])
@@ -65,7 +65,7 @@ export default function PortfolioSection() {
 
         <div
           ref={scrollContainerRef}
-          className="portfolio-scroll mt-12 overflow-x-auto pb-6"
+          className="portfolio-scroll mt-12 overflow-x-auto pb-6 pt-12"
           onScroll={updateActiveIndexFromScroll}
         >
           <div className="mx-auto flex min-w-max items-end justify-center gap-7 px-4 [perspective:1400px] md:gap-8">
@@ -75,7 +75,7 @@ export default function PortfolioSection() {
                 ref={(element) => {
                   cardRefs.current[index] = element
                 }}
-                className={`group w-[210px] shrink-0 overflow-hidden rounded-[30px] border border-[#dadcdf] bg-[#f1f2f4] shadow-[0_20px_34px_rgba(26,16,35,0.24)] transition duration-300 ${cardTilt[index] ?? 'rotate-0'} ${cardDepth[index] ?? '[transform:rotateY(0deg)_rotateX(6deg)]'} ${activeIndex === index ? 'ring-2 ring-[var(--color-accent)]/45' : ''} hover:z-10 hover:-translate-y-2 hover:[transform:rotateX(0deg)_rotateY(0deg)_rotateZ(0deg)] hover:shadow-[0_28px_48px_rgba(26,16,35,0.34)]`}
+                className={`group h-auto w-[300px] shrink-0 overflow-hidden rounded-[30px] border border-[#dadcdf] bg-[#f1f2f4] shadow-[0_20px_34px_rgba(26,16,35,0.24)] transition duration-300 ${cardTilt[index] ?? 'rotate-0'} ${cardDepth[index] ?? '[transform:rotateY(0deg)_rotateX(6deg)]'} ${activeIndex === index ? 'ring-2 ring-[var(--color-accent)]/45' : ''} hover:z-10 hover:-translate-y-2 hover:[transform:rotateX(0deg)_rotateY(0deg)_rotateZ(0deg)] hover:shadow-[0_28px_48px_rgba(26,16,35,0.34)]`}
               >
                 <div className="h-[350px] overflow-hidden md:h-[380px]">
                   <img

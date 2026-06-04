@@ -1,6 +1,6 @@
 import { learningSteps } from "../../data/steps";
 import Card from "../ui/Card";
-import howItWorksImage from "../../assets/images/work.png";
+import howItWorksImage from "../../assets/images/0YAXt.jpg";
 
 export default function HowItWorksSection() {
   if (!learningSteps.length) return null;

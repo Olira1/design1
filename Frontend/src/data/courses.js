@@ -1,7 +1,7 @@
-import image2 from "../assets/images/image3.png";
-import image3 from "../assets/images/image4.png";
-import image4 from "../assets/images/image5.png";
-import image5 from "../assets/images/image6.png";
+import image2 from "../assets/images/Basic sweng training1.png";
+import image3 from "../assets/images/two.jpg";
+import image4 from "../assets/images/Pattern Making1.png";
+import image5 from "../assets/images/SRyXK.jpg";
 
 /*
   Step 2: Courses data
