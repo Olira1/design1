@@ -18,6 +18,17 @@ function getRegistrationApiUrl() {
   return `${apiBaseUrl.replace(/\/$/, '')}/api/register`
 }
 
+function getSubmissionErrorMessage(error) {
+  // Fetch throws TypeError on network/CORS/backend-unreachable failures.
+  if (error instanceof TypeError) {
+    return 'Unable to reach the registration server. Make sure the backend is running and try again.'
+  }
+
+  const fallbackMessage = 'Registration failed. Please try again.'
+  const message = typeof error?.message === 'string' ? error.message.trim() : ''
+  return message || fallbackMessage
+}
+
 function normalizeFormValues(formData) {
   return {
     fullName: String(formData.get('fullName') || '').trim(),
@@ -92,7 +103,7 @@ export default function RegistrationSection({ compact = false }) {
     } catch (error) {
       setStatus({
         type: 'error',
-        message: error.message || 'Registration failed. Please try again.',
+        message: getSubmissionErrorMessage(error),
       })
     } finally {
       setIsSubmitting(false)
