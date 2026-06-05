@@ -9,11 +9,29 @@ import registerRouter from "./routes/register.js";
 
 const app = express();
 const env = loadEnv();
+const allowedOrigins = String(env.CORS_ORIGIN || "")
+  .split(",")
+  .map((origin) => origin.trim().replace(/\/+$/, ""))
+  .filter(Boolean);
 
 app.use(helmet());
 app.use(
   cors({
-    origin: env.CORS_ORIGIN,
+    origin(origin, callback) {
+      // Allow non-browser requests (no Origin header).
+      if (!origin) {
+        callback(null, true);
+        return;
+      }
+
+      const normalizedOrigin = origin.replace(/\/+$/, "");
+      if (allowedOrigins.includes(normalizedOrigin)) {
+        callback(null, true);
+        return;
+      }
+
+      callback(new Error("Not allowed by CORS"));
+    },
   }),
 );
 app.use(express.json({ limit: "100kb" }));

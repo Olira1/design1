@@ -18,33 +18,45 @@ export const aboutHighlights = [
 */
 export const whyChooseUsFeatures = [
   {
-    icon: 'scissors',
-    title: 'Practical Training',
-    description: 'Hands-on projects from day one with real fabrics and machines.',
+    icon: "scissors",
+    title: "Practical Training",
+    headline: "Learn by Doing, Not Just Watching",
+    description:
+      "Work with real fabrics, patterns, and sewing machines from your very first class. Build practical skills through hands-on projects that prepare you for real-world fashion work.",
   },
   {
-    icon: 'teacher',
-    title: 'Expert Instructors',
-    description: 'Learn from professionals with years of industry experience.',
+    icon: "teacher",
+    title: "Expert Instructors",
+    headline: "Guidance From Industry Professionals",
+    description:
+      "Learn directly from experienced fashion designers and tailoring experts. Gain practical knowledge, professional techniques, and valuable industry insights.",
   },
   {
-    icon: 'calendar',
-    title: 'Flexible Schedules',
-    description: 'Morning, afternoon, and weekend classes that fit your life.',
+    icon: "calendar",
+    title: "Flexible Schedules",
+    headline: "Training That Fits Your Lifestyle",
+    description:
+      "Choose from morning, afternoon, or weekend classes designed to fit your personal and professional commitments without interrupting your routine.",
   },
   {
-    icon: 'certificate',
-    title: 'Certification',
-    description: 'Earn a recognized certificate upon successful completion.',
+    icon: "certificate",
+    title: "Certification",
+    headline: "Earn Recognition for Your Skills",
+    description:
+      "Receive a certificate upon successful completion of your training. Showcase your achievement and strengthen your confidence for future opportunities.",
   },
   {
-    icon: 'wallet',
-    title: 'Affordable Programs',
-    description: 'Quality training at accessible, student-friendly pricing.',
+    icon: "wallet",
+    title: "Affordable Programs",
+    headline: "Quality Education Within Reach",
+    description:
+      "Access professional fashion and sewing training through student-friendly programs designed to provide excellent value without compromising quality.",
   },
   {
-    icon: 'machine',
-    title: 'Modern Equipment',
-    description: 'Practice on industry-standard sewing machines and tools.',
+    icon: "machine",
+    title: "Modern Equipment",
+    headline: "Train With Professional Tools",
+    description:
+      "Practice using modern sewing machines, equipment, and materials commonly used in today's fashion industry, helping you develop job-ready skills.",
   },
-]
+];

@@ -6,16 +6,13 @@
 
 export const availableSchedules = [
   {
-    title: 'Morning Classes',
-    time: '8:00 AM – 11:00 AM',
+    title: 'Day Classes',
+    // time: '8:00 AM – 11:00 AM',
   },
+
   {
-    title: 'Afternoon Classes',
-    time: '2:00 PM – 5:00 PM',
-  },
-  {
-    title: 'Weekend Classes',
-    time: 'Sat & Sun',
+    title: 'Night Classes',
+    // time: 'Sat & Sun',
   },
 ];
 
