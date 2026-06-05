@@ -256,7 +256,7 @@ export default function HeroSection() {
 
       <div className="relative z-20 -mt-8 px-4 sm:-mt-12 md:-mt-8 md:px-6 lg:-mt-14">
         <div className="mx-auto max-w-5xl text-center">
-          <div className="rounded-2xl border border-[var(--color-accent)]/25 bg-white/70 p-4 shadow-[0_10px_30px_rgba(248,79,149,0.15)] backdrop-blur-sm sm:rounded-3xl sm:p-6 -mb-24 sm:-mb-60 md:p-8 md:-mb-85 md:min-h-100">
+          <div className="rounded-2xl border border-[var(--color-accent)]/25 bg-white/70 p-4 shadow-[0_10px_30px_rgba(248,79,149,0.15)] backdrop-blur-sm sm:rounded-3xl sm:p-6 -mb-24 sm:-mb-100 md:p-8 md:-mb-85 md:min-h-100">
             <div className=" grid gap-6 md:grid-cols-3 md:gap-0">
               {[
                 [
