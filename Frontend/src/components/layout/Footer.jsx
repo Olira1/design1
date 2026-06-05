@@ -21,7 +21,7 @@ export default function Footer() {
                 <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#f3b8a6] text-xs font-bold text-[#2a1210]">
                   A
                 </span>
-                Atelier
+                IQ FDTC
               </div>
               <p className="mt-4 max-w-xs text-sm leading-6 text-[#d6c0b8]">
                 A modern fashion design and sewing training institute building the next generation of fashion professionals.
@@ -45,7 +45,7 @@ export default function Footer() {
               <h4 className="text-base font-semibold">Contact</h4>
               <ul className="mt-4 space-y-2.5 text-sm text-[#d6c0b8]">
                 <li>+252 61 000 0000</li>
-                <li>hello@atelier.com</li>
+                <li>hello@IQ FDTC.com</li>
                 <li>Fashion District, City Center</li>
               </ul>
               <div className="mt-4 flex items-center gap-2.5">
@@ -84,7 +84,7 @@ export default function Footer() {
           </div>
 
           <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs text-[#c7b0a8] sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2026 Atelier Fashion Institute. All rights reserved.</p>
+            <p>© 2026 IQ FDTC Fashion Institute. All rights reserved.</p>
             <p>Crafted with care for future fashion professionals.</p>
           </div>
         </div>

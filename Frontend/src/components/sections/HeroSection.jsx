@@ -260,19 +260,19 @@ export default function HeroSection() {
             <div className=" grid gap-6 md:grid-cols-3 md:gap-0">
               {[
                 [
-                  "22",
-                  "May 22: Class starts",
-                  "The May 2026 batch class will start on May 22 at 1:00pm EST. We will start our class with the first day orientation session.",
+                  "1000+",
+                  "Students Empowered",
+                  "Join a growing community of aspiring fashion designers and sewing professionals who have transformed their passion into practical skills through our comprehensive training programs.",
                 ],
                 [
-                  "6",
-                  "May 6: Scholarship day",
-                  "Scholarship applications for the May 2026 batch are due on May 6. Please make sure to submit your application before the cutoff to be considered.",
+                  "100%",
+                  "Hands-On Learning",
+                  "From the very first lesson, students work with real fabrics, sewing machines, and practical projects that build confidence through experience rather than theory alone.",
                 ],
                 [
-                  "100",
-                  "100 Students",
-                  "As we always do when we start a class, 100 students will start their journey together with a collective goal of reaching the end together.",
+                  "95%",
+                  "Satisfaction Rate",
+                  "Our commitment to quality education, expert guidance, and student success has earned the trust and satisfaction of learners throughout their fashion journey.",
                 ],
               ].map(([number, title, description], index) => (
                 <article

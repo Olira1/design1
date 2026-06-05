@@ -79,7 +79,7 @@ export default function ContactSection() {
           <div>
             <div className="overflow-hidden rounded-2xl border border-[var(--color-border-soft)] bg-white shadow-sm">
               <iframe
-                title="Atelier location map"
+                title="IQ TDTC location map"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=45.23%2C2.00%2C45.45%2C2.20&layer=mapnik"
                 className="h-[270px] w-full md:h-[300px]"
                 loading="lazy"
