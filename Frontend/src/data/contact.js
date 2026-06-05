@@ -8,14 +8,14 @@ export const contactDetails = [
   {
     id: "phone",
     label: "Phone",
-    value: "+252 61 000 0000",
-    href: "tel:+252610000000",
+    value: "+251 91 159 2945",
+    href: "tel:+251911592945",
   },
   {
-    id: "whatsapp",
-    label: "WhatsApp",
-    value: "+252 61 000 0000",
-    href: "https://wa.me/252610000000",
+    id: "TikTok",
+    label: "TikTok",
+    value: "IQ Fashion Design school",
+    href: "https://www.tiktok.com/@user00107638?_r=1&_t=ZS-96xdPjlX5GO",
   },
   {
     id: "telegram",

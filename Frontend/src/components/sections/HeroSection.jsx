@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import logo from '../../assets/images/logo.jpg'
 import heroBackground from '../../assets/images/herosection.png'
 import Button from '../ui/Button'
-import video from '../../assets/Video/video2.mp4'
+import video from '../../assets/Video/final.mp4'
 import { cn } from '../../utils/cn'
 
 export default function HeroSection() {

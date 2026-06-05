@@ -20,11 +20,11 @@ export const faqs = [
     answer:
       'Yes, all students who complete a program receive an official certificate of completion.',
   },
-  {
-    question: 'Are weekend classes available?',
-    answer:
-      'Absolutely. We offer dedicated weekend cohorts for students who work or study during the week.',
-  },
+  // {
+  //   question: 'Are weekend classes available?',
+  //   answer:
+  //     'Absolutely. We offer dedicated weekend cohorts for students who work or study during the week.',
+  // },
   {
     question: 'How long are the programs?',
     answer:

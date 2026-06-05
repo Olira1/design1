@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { courseOptions } from '../../data/courses'
-import sideImage from '../../assets/images/evan.png'
+import sideImage from "../../assets/images/2manager.jpg";
 import Button from '../ui/Button'
 import SectionHeading from '../ui/SectionHeading'
 

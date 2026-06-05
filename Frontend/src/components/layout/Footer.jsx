@@ -1,5 +1,11 @@
 export default function Footer() {
-  const quickLinks = ["About", "Courses", "Portfolio", "FAQ", "Register"];
+  const quickLinks = [
+    { label: "About", href: "#about" },
+    { label: "Courses", href: "#courses" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Register", href: "/register" },
+  ];
   const socials = ["IG", "FB", "TG", "WA"];
 
   return (
@@ -32,9 +38,9 @@ export default function Footer() {
               <h4 className="text-base font-semibold">Quick Links</h4>
               <ul className="mt-4 space-y-2.5 text-sm text-[#d6c0b8]">
                 {quickLinks.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="transition hover:text-white">
-                      {link}
+                  <li key={link.label}>
+                    <a href={link.href} className="transition hover:text-white">
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -44,7 +50,7 @@ export default function Footer() {
             <div>
               <h4 className="text-base font-semibold">Contact</h4>
               <ul className="mt-4 space-y-2.5 text-sm text-[#d6c0b8]">
-                <li>+252 61 000 0000</li>
+                <li>+251 91 159 2945</li>
                 <li>hello@IQ FDTC.com</li>
                 <li>Fashion District, City Center</li>
               </ul>

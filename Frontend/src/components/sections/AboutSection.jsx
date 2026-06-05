@@ -1,4 +1,4 @@
-import aboutImage from '../../assets/images/evan.png'
+import aboutImage from "../../assets/images/2manager.jpg";
 import { BookOpen, CalendarClock, GraduationCap, Scissors, Shirt } from 'lucide-react'
 import { aboutHighlights } from '../../data/features'
 import SectionHeading from '../ui/SectionHeading'

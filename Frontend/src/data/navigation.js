@@ -58,19 +58,19 @@ export const footerQuickLinks = [
 
 export const socialLinks = [
   {
-    label: 'Instagram',
-    href: 'https://instagram.com',
+    label: "Instagram",
+    href: "https://instagram.com",
   },
   {
-    label: 'Facebook',
-    href: 'https://facebook.com',
+    label: "Facebook",
+    href: "https://facebook.com",
   },
   {
-    label: 'Telegram',
-    href: 'https://t.me',
+    label: "Telegram",
+    href: "https://t.me",
   },
   {
-    label: 'TikTok',
-    href: 'https://tiktok.com',
+    label: "TikTok",
+    href: "https://www.tiktok.com/@user00107638?_r=1&_t=ZS-96xdPjlX5GO",
   },
-]
+];
