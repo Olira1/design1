@@ -6,7 +6,16 @@ import SectionHeading from '../ui/SectionHeading'
 export default function PortfolioSection() {
   const displayItems = portfolioItems.slice(0, 8)
   const cardTilt = ['rotate-0', 'rotate-0', 'rotate-0', 'rotate-0', 'rotate-0', 'rotate-0']
-  const cardDepth = ['[transform:rotateY(0deg)_rotateX(0deg)]', '[transform:rotateY(0deg)_rotateX(0deg)]', '[transform:rotateY(0deg)_rotateX(0deg)]', '[transform:rotateY(0deg)_rotateX(0deg)]', '[transform:rotateY(0deg)_rotateX(0deg)]', '[transform:rotateY(0deg)_rotateX(0deg)]']
+  const cardDepth = [
+    "[transform:rotateY(0deg)_rotateX(0deg)]",
+    "[transform:rotateY(0deg)_rotateX(0deg)]",
+    "[transform:rotateY(0deg)_rotateX(0deg)]",
+    "[transform:rotateY(0deg)_rotateX(0deg)]",
+    "[transform:rotateY(0deg)_rotateX(0deg)]",
+    "[transform:rotateY(0deg)_rotateX(0deg)]",
+    "[transform:rotateY(0deg)_rotateX(0deg)]",
+    "[transform:rotateY(0deg)_rotateX(0deg)]",
+  ];
   const [activeIndex, setActiveIndex] = useState(0)
   const scrollContainerRef = useRef(null)
   const cardRefs = useRef([])

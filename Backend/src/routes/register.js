@@ -17,7 +17,7 @@ const REQUIRED_FIELDS = [
 
 const ALLOWED_GENDERS = ["Female", "Male", "Prefer not to say"];
 const ALLOWED_LEVELS = ["Beginner", "Intermediate", "Advanced"];
-const ALLOWED_SCHEDULES = ["Morning", "Afternoon", "Weekend"];
+const ALLOWED_SCHEDULES = ["Day Classes", "Night Classes"];
 
 function normalizePhone(value) {
   return String(value || "")
@@ -88,8 +88,8 @@ function validateRegistrationPayload(payload) {
       course: String(data.course || "").trim(),
       level: String(data.level || "").trim(),
       schedule: String(data.schedule || "").trim(),
-      message: String(data.message || "").trim(),
-      source: String(data.source || "").trim(),
+      // message: String(data.message || "").trim(),
+      // source: String(data.source || "").trim(),
     },
   };
 }

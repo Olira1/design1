@@ -43,7 +43,7 @@ function normalizeFormValues(formData) {
     level: String(formData.get('level') || '').trim(),
     schedule: String(formData.get('schedule') || '').trim(),
     message: String(formData.get('message') || '').trim(),
-    source: String(formData.get('source') || '').trim(),
+    // source: String(formData.get('source') || '').trim(),
   }
 }
 
@@ -115,128 +115,186 @@ export default function RegistrationSection({ compact = false }) {
       id="register"
       className={
         compact
-          ? 'bg-[#f6f7fa] px-3 py-4 sm:px-4 sm:py-5 md:px-6 md:py-6'
-          : 'bg-[#f6f7fa] px-3 py-10 sm:px-4 sm:py-12 md:px-6 md:py-16'
+          ? "bg-[#f6f7fa] px-3 py-4 sm:px-4 sm:py-5 md:px-6 md:py-6"
+          : "bg-[#f6f7fa] px-3 py-10 sm:px-4 sm:py-12 md:px-6 md:py-16"
       }
     >
       <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-[var(--color-border-soft)] bg-white shadow-[0_18px_45px_rgba(24,27,38,0.12)] md:h-150">
         <div className="grid lg:grid-cols-2">
-          <div className={compact ? 'p-3 sm:p-4 md:p-5 lg:p-6' : 'p-4 sm:p-6 md:p-8 lg:p-10'}>
+          <div
+            className={
+              compact ? "p-3 sm:p-4 md:p-5 lg:p-6" : "p-4 sm:p-6 md:p-8 lg:p-10"
+            }
+          >
             <SectionHeading
               align="left"
               eyebrow="Begin Your Journey"
               title="Register Now"
               description="Fill in the form and our team will reach out within 24 hours."
-              className={compact ? '[&>h2]:mt-2 [&>h2]:text-4xl [&>p]:mt-2 [&>p]:text-sm [&>p]:leading-6' : ''}
+              className={
+                compact
+                  ? "[&>h2]:mt-2 [&>h2]:text-4xl [&>p]:mt-2 [&>p]:text-sm [&>p]:leading-6"
+                  : ""
+              }
             />
 
             <form
               className={
                 compact
-                  ? 'mt-4 space-y-3 rounded-2xl border border-[var(--color-border-soft)] bg-[var(--color-cream)] p-3 sm:p-4 md:p-5'
-                  : 'mt-8 space-y-5 rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-cream)] p-4 sm:p-6 md:p-8'
+                  ? "mt-4 space-y-3 rounded-2xl border border-[var(--color-border-soft)] bg-[var(--color-cream)] p-3 sm:p-4 md:p-5"
+                  : "mt-8 space-y-5 rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-cream)] p-4 sm:p-6 md:p-8"
               }
               onSubmit={handleSubmit}
             >
-              <div className={compact ? 'grid gap-3 md:grid-cols-3 md:gap-6' : 'grid gap-5 md:grid-cols-2'}>
-            <label className={compact ? '' : 'md:col-span-2'}>
-              <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
-                Full Name
-              </span>
-              <input className={compact ? compactInputClasses : inputClasses} name="fullName" placeholder="Your full name" required type="text" />
-            </label>
+              <div
+                className={
+                  compact
+                    ? "grid gap-3 md:grid-cols-3 md:gap-6"
+                    : "grid gap-5 md:grid-cols-2"
+                }
+              >
+                <label className={compact ? "" : "md:col-span-2"}>
+                  <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
+                    Full Name
+                  </span>
+                  <input
+                    className={compact ? compactInputClasses : inputClasses}
+                    name="fullName"
+                    placeholder="Your full name"
+                    required
+                    type="text"
+                  />
+                </label>
 
-            <label className={compact ? '' : 'md:col-span-2'}>
-              <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
-                Email Address
-              </span>
-              <input
-                className={compact ? compactInputClasses : inputClasses}
-                name="email"
-                placeholder="you@example.com"
-                required
-                type="email"
-              />
-            </label>
+                <label className={compact ? "" : "md:col-span-2"}>
+                  <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
+                    Email Address
+                  </span>
+                  <input
+                    className={compact ? compactInputClasses : inputClasses}
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                    type="email"
+                  />
+                </label>
 
-            <label>
-              <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
-                Phone Number
-              </span>
-              <input className={compact ? compactInputClasses : inputClasses} name="phone" placeholder="+252 ..." required type="tel" />
-            </label>
+                <label>
+                  <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
+                    Phone Number
+                  </span>
+                  <input
+                    className={compact ? compactInputClasses : inputClasses}
+                    name="phone"
+                    placeholder="+252 ..."
+                    required
+                    type="tel"
+                  />
+                </label>
 
-            <label>
-              <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
-                Gender
-              </span>
-              <select className={compact ? compactInputClasses : inputClasses} defaultValue="" name="gender" required>
-                <option value="" disabled>
-                  Select gender
-                </option>
-                <option>Female</option>
-                <option>Male</option>
-                <option>Prefer not to say</option>
-              </select>
-            </label>
+                <label>
+                  <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
+                    Gender
+                  </span>
+                  <select
+                    className={compact ? compactInputClasses : inputClasses}
+                    defaultValue=""
+                    name="gender"
+                    required
+                  >
+                    <option value="" disabled>
+                      Select gender
+                    </option>
+                    <option>Female</option>
+                    <option>Male</option>
+                    <option>Prefer not to say</option>
+                  </select>
+                </label>
 
-            <label>
-              <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
-                Age
-              </span>
-              <input className={compact ? compactInputClasses : inputClasses} min="10" name="age" placeholder="Your age" required type="number" />
-            </label>
+                <label>
+                  <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
+                    Age
+                  </span>
+                  <input
+                    className={compact ? compactInputClasses : inputClasses}
+                    min="10"
+                    name="age"
+                    placeholder="Your age"
+                    required
+                    type="number"
+                  />
+                </label>
 
-            <label>
-              <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
-                City
-              </span>
-              <input className={compact ? compactInputClasses : inputClasses} name="city" placeholder="Your city" required type="text" />
-            </label>
+                <label>
+                  <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
+                    City
+                  </span>
+                  <input
+                    className={compact ? compactInputClasses : inputClasses}
+                    name="city"
+                    placeholder="Your city"
+                    required
+                    type="text"
+                  />
+                </label>
 
-            <label className={compact ? '' : 'md:col-span-2'}>
-              <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
-                Course Interested In
-              </span>
-              <select className={compact ? compactInputClasses : inputClasses} defaultValue="" name="course" required>
-                <option value="" disabled>
-                  Choose a course
-                </option>
-                {courseOptions.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
+                <label className={compact ? "" : "md:col-span-2"}>
+                  <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
+                    Course Interested In
+                  </span>
+                  <select
+                    className={compact ? compactInputClasses : inputClasses}
+                    defaultValue=""
+                    name="course"
+                    required
+                  >
+                    <option value="" disabled>
+                      Choose a course
+                    </option>
+                    {courseOptions.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </label>
 
-            <label>
-              <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
-                Skill Level
-              </span>
-              <select className={compact ? compactInputClasses : inputClasses} defaultValue="" name="level" required>
-                <option value="" disabled>
-                  Select level
-                </option>
-                <option>Beginner</option>
-                <option>Intermediate</option>
-                <option>Advanced</option>
-              </select>
-            </label>
+                <label>
+                  <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
+                    Skill Level
+                  </span>
+                  <select
+                    className={compact ? compactInputClasses : inputClasses}
+                    defaultValue=""
+                    name="level"
+                    required
+                  >
+                    <option value="" disabled>
+                      Select level
+                    </option>
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                  </select>
+                </label>
 
-            <label>
-              <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
-                Preferred Schedule
-              </span>
-              <select className={compact ? compactInputClasses : inputClasses} defaultValue="" name="schedule" required>
-                <option value="" disabled>
-                  Select schedule
-                </option>
-                <option>Morning</option>
-                <option>Afternoon</option>
-                <option>Weekend</option>
-              </select>
-            </label>
+                <label>
+                  <span className="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">
+                    Preferred Schedule
+                  </span>
+                  <select
+                    className={compact ? compactInputClasses : inputClasses}
+                    defaultValue=""
+                    name="schedule"
+                    required
+                  >
+                    <option value="" disabled>
+                      Select schedule
+                    </option>
+                    <option>Day Classes</option>
+                    <option>Night Classes</option>
+                  </select>
+                </label>
               </div>
 
               {/* <label>
@@ -272,19 +330,31 @@ export default function RegistrationSection({ compact = false }) {
                 </div>
               </fieldset> */}
 
-              <Button className="w-full md:w-auto md:mt-8" type="submit" disabled={isSubmitting}>
-                {isSubmitting ? 'Submitting...' : 'Submit Registration'}
+              <Button
+                className="w-full md:w-auto md:mt-8"
+                type="submit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Submitting..." : "Submit Registration"}
               </Button>
 
-              {status.type !== 'idle' ? (
-                <p className={`rounded-xl px-4 py-3 text-sm font-medium ${statusClasses}`}>
+              {status.type !== "idle" ? (
+                <p
+                  className={`rounded-xl px-4 py-3 text-sm font-medium ${statusClasses}`}
+                >
                   {status.message}
                 </p>
               ) : null}
             </form>
           </div>
 
-          <div className={compact ? 'relative hidden min-h-[520px] lg:block' : 'relative hidden min-h-[680px] lg:block'}>
+          <div
+            className={
+              compact
+                ? "relative hidden min-h-[520px] lg:block"
+                : "relative hidden min-h-[680px] lg:block"
+            }
+          >
             <img
               src={sideImage}
               alt="Fashion student working at a sewing station"
@@ -295,5 +365,5 @@ export default function RegistrationSection({ compact = false }) {
         </div>
       </div>
     </section>
-  )
+  );
 }

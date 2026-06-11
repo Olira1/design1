@@ -30,7 +30,10 @@ app.use(
         return;
       }
 
-      callback(new Error("Not allowed by CORS"));
+      // Deny without throwing: the browser still blocks the response,
+      // but the server logs one clean line instead of a stack trace.
+      console.warn(`CORS: blocked request from origin ${normalizedOrigin}`);
+      callback(null, false);
     },
   }),
 );
