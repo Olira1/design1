@@ -24,7 +24,7 @@ export default function WhyChooseUsSection() {
   return (
     <section
       id="why-choose-us"
-      className="bg-[var(--color-white)] px-4 py-20 md:px-6"
+      className="bg-[var(--color-white)] px-4 py-12 sm:py-20 md:px-6"
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeading
@@ -33,30 +33,34 @@ export default function WhyChooseUsSection() {
           description="We combine practical fashion training, expert mentorship, and flexible learning so students can grow from beginner to confident creator."
         />
 
-        <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="mt-8 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-2">
           {whyChooseUsFeatures.map((feature) => {
             const FeatureIcon = iconMap[feature.icon] ?? Sparkles
 
             return (
-              <Card key={feature.title} interactive>
-                <div className="flex items-center gap-2 text-center">
+              <Card
+                key={feature.title}
+                interactive
+                className="rounded-2xl bg-[#FFF9F3] p-4 sm:rounded-3xl sm:p-6"
+              >
+                <div className="flex items-center gap-2 sm:gap-3">
                   <span
-                    className="inline-flex mt-3 h-15 items-center justify-center rounded-2xl text-[var(--color-accent)]"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-accent)]/10 text-[var(--color-accent)] sm:h-12 sm:w-12"
                     aria-hidden="true"
                   >
-                    <FeatureIcon size={22} />
+                    <FeatureIcon className="h-5 w-5 sm:h-6 sm:w-6" />
                   </span>
                   <span>
-                    <h2 className="mt-4 font-[var(--font-display)] text-2xl text-center items-center justify-center font-bold text-[#82264b]">
+                    <h3 className="font-[var(--font-display)] text-lg font-bold leading-snug text-[#82264b] sm:text-2xl">
                       {feature.title}
-                    </h2>
+                    </h3>
                   </span>
                 </div>
 
-                <h4 className=" ml-7 font-[var(--font-display)] text-xl text-[#82264b]">
+                <h4 className="mt-2 font-[var(--font-display)] text-base leading-snug text-[#82264b] sm:mt-3 sm:text-xl">
                   {feature.headline}
                 </h4>
-                <p className=" text-sm leading-7 text-[var(--color-muted)]">
+                <p className="mt-2 text-sm leading-6 text-[var(--color-muted)] sm:mt-3 sm:leading-7">
                   {feature.description}
                 </p>
               </Card>
