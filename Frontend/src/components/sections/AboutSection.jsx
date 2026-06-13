@@ -20,7 +20,7 @@ export default function AboutSection() {
     <section id="about" className="mt-8 bg-white px-4 py-16 sm:mt-10 sm:py-20 md:px-6 md:mt-50">
       <div>
         <h2 className="mx-auto pb-10 text-center text-3xl font-bold bg-gradient-to-r from-[#F94F95] to-[#000000] bg-clip-text text-transparent sm:pb-12 sm:text-4xl">
-          About Our Institute
+          About IQFS - IQ Fashion School
         </h2>
       </div>
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
@@ -28,8 +28,8 @@ export default function AboutSection() {
           <SectionHeading
             align="left"
             // eyebrow="About Our Institute"
-            title="Where creativity meets craftsmanship"
-            description="We are a modern fashion design and sewing training institute focused on helping students develop practical tailoring and clothing production skills. Our programs combine creativity, technical sewing knowledge, and hands-on experience to prepare students for professional opportunities in the fashion industry."
+            title="Where creativity meets craftsmanship at IQ Fashion School"
+            description="IQFS is a Modern Fashion Design and Sewing Institute focused on helping students develop practical tailoring and clothing production skills. Our programs combine creativity, technical sewing knowledge, and hands-on experience to prepare students for professional opportunities in the fashion industry."
           />
 
           <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
