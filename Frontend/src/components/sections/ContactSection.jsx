@@ -21,27 +21,31 @@ export default function ContactSection() {
   if (!contactDetails.length) return null
 
   return (
-    <section id="contact" className="bg-[var(--color-cream)] px-4 py-20 md:px-6">
+    <section id="contact" className="bg-[var(--color-cream)] px-4 py-12 sm:py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading eyebrow="Get In Touch" title="Contact Us" />
+        <SectionHeading
+          eyebrow="Get In Touch"
+          title="Contact Us"
+          className="[&>h2]:text-2xl sm:[&>h2]:text-5xl"
+        />
 
-        <div className="mt-12 grid items-start gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-3xl border border-[var(--color-border-soft)] bg-white p-4 shadow-sm">
+        <div className="mt-8 grid items-start gap-6 sm:mt-12 sm:gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-3.5 shadow-sm sm:rounded-3xl sm:p-4">
             {contactDetails.map((item) => (
               <article
                 key={item.id}
-                className="mb-3 flex items-center gap-3 rounded-2xl border border-[var(--color-border-soft)] bg-[#fbfbfb] px-3 py-2.5 last:mb-0"
+                className="mb-2.5 flex items-center gap-2.5 rounded-xl border border-[var(--color-border-soft)] bg-[#fbfbfb] px-3 py-2.5 last:mb-0 sm:mb-3 sm:gap-3 sm:rounded-2xl"
               >
-                <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--color-peach)] text-[10px] font-bold text-[var(--color-accent-deep)]">
+                <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-peach)] text-[11px] font-bold text-[var(--color-accent-deep)] sm:h-7 sm:w-7 sm:text-[10px]">
                   {contactIconById[item.id] ?? '?'}
                 </span>
                 <div className="min-w-0">
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-[#9b8f89]">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[#9b8f89] sm:text-[10px]">
                     {item.label}
                   </p>
                   {item.href ? (
                     <a
-                      className="truncate text-xs text-[var(--color-ink)] transition hover:text-[var(--color-accent)]"
+                      className="break-all text-sm text-[var(--color-ink)] transition hover:text-[var(--color-accent)] sm:truncate sm:text-xs"
                       href={item.href}
                       rel="noreferrer"
                       target={item.href.startsWith('http') ? '_blank' : undefined}
@@ -49,23 +53,23 @@ export default function ContactSection() {
                       {item.value}
                     </a>
                   ) : (
-                    <p className="truncate text-xs text-[var(--color-ink)]">{item.value}</p>
+                    <p className="break-words text-sm text-[var(--color-ink)] sm:truncate sm:text-xs">{item.value}</p>
                   )}
                 </div>
               </article>
             ))}
 
-            <article className="mt-3 rounded-2xl border border-[var(--color-border-soft)] bg-[#fbfbfb] px-3 py-3">
-              <h3 className="text-[10px] font-semibold uppercase tracking-wider text-[#9b8f89]">
+            <article className="mt-2.5 rounded-xl border border-[var(--color-border-soft)] bg-[#fbfbfb] px-3 py-3 sm:mt-3 sm:rounded-2xl">
+              <h3 className="text-[11px] font-semibold uppercase tracking-wider text-[#9b8f89] sm:text-[10px]">
                 Follow Us
               </h3>
-              <div className="mt-2.5 flex flex-wrap gap-2">
+              <div className="mt-2.5 flex flex-wrap gap-2.5 sm:gap-2">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[var(--color-border-soft)] bg-white text-[10px] font-semibold text-[var(--color-muted)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[var(--color-border-soft)] bg-white text-[11px] font-semibold text-[var(--color-muted)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] sm:h-6 sm:w-6 sm:text-[10px]"
                     rel="noreferrer"
                     target="_blank"
                   >
@@ -81,7 +85,7 @@ export default function ContactSection() {
               <iframe
                 title="IQ TDTC location map"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=45.23%2C2.00%2C45.45%2C2.20&layer=mapnik"
-                className="h-[270px] w-full md:h-[300px]"
+                className="h-[220px] w-full sm:h-[270px] md:h-[300px]"
                 loading="lazy"
               />
             </div>
