@@ -12,16 +12,16 @@ const courseIconMap = {
 
 export default function CoursesSection() {
   return (
-    <section id="courses" className="bg-[#5E5E5E] px-4 py-20 md:px-6">
+    <section id="courses" className="bg-[#5E5E5E] px-4 py-12 sm:py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Training Programs"
           title="Our Training Programs"
           description="Choose from our practical and career-focused programs."
-          className="[&_*]:text-white"
+          className="[&_*]:text-white [&>h2]:text-2xl [&>p]:mt-3 [&>p]:text-sm [&>p]:leading-6 sm:[&>h2]:text-5xl sm:[&>p]:mt-5 sm:[&>p]:text-base sm:[&>p]:leading-8"
         />
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2">
+        <div className="mt-8 grid gap-3 sm:mt-12 sm:gap-4 md:grid-cols-2">
           {courses.map((course) => {
             const CourseIcon = courseIconMap[course.title] ?? BookOpen
 
@@ -29,7 +29,7 @@ export default function CoursesSection() {
               <Card
                 key={course.id}
                 interactive
-                className="flex h-full flex-col rounded-xl border-[#d2d3d8] bg-[#f6f6f8] p-4 shadow-none"
+                className="flex h-full flex-col rounded-xl border-[#d2d3d8] bg-[#f6f6f8] p-3.5 shadow-none sm:p-4"
               >
                 <div className="flex items-start gap-2.5">
                   <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[10px] font-bold text-[#cc5b2b]">
@@ -40,7 +40,7 @@ export default function CoursesSection() {
                     />
                   </span>
                   <div>
-                    <h3 className="font-sans text-[1.55rem] font-extrabold leading-tight text-[#82264b]">
+                    <h3 className="font-sans text-xl font-extrabold leading-tight text-[#82264b] sm:text-[1.55rem]">
                       {course.title}
                     </h3>
                     <p className="text-xs text-[#595d67]">{course.level}</p>
@@ -51,21 +51,21 @@ export default function CoursesSection() {
                   <img
                     src={course.image}
                     alt={`${course.title} course`}
-                    className="h-80 w-full object-cover"
+                    className="h-56 w-full object-cover sm:h-80"
                     loading="lazy"
                   />
                 </div>
 
-                <p className="mt-4 text-sm leading-6 text-[#5f646f]">
+                <p className="mt-3 text-[13px] leading-5 text-[#5f646f] sm:mt-4 sm:text-sm sm:leading-6">
                   {course.description}
                 </p>
 
-                <p className="mt-4 text-sm font-semibold text-[#666a74]">
+                <p className="mt-3 text-sm font-semibold text-[#666a74] sm:mt-4">
                   Practical Training{" "}
                   <span className="text-[#3f4350]">{course.startDate}</span>
                 </p>
 
-                <div className="mt-4 text-sm text-[#555a66]">
+                <div className="mt-3 text-sm text-[#555a66] sm:mt-4">
                   <p>
                     Real Projects:{" "}
                     <span className="font-extrabold text-[#82264b]">
@@ -83,9 +83,9 @@ export default function CoursesSection() {
                   </p>
                 </div>
 
-                <div className="mt-4 h-px bg-[#dddfe5]" />
+                <div className="mt-3 h-px bg-[#dddfe5] sm:mt-4" />
 
-                <div className="mt-4 mx-auto flex flex-wrap items-center gap-2.5">
+                <div className="mt-3 mx-auto flex flex-wrap items-center gap-2 sm:mt-4 sm:gap-2.5">
                   {/* <span className="rounded-md border border-[#d0d2d8] bg-[#ecf4ff] px-2.5 py-1 text-[11px] font-semibold text-[#4a78a8]">
                   {course.deliveryMode}
                 </span> */}
@@ -94,7 +94,7 @@ export default function CoursesSection() {
                   </span>
                   <a
                     href="/register"
-                    className="rounded-full border border-[#b8adb4] px-5 py-1.5 text-xs font-semibold text-[#6e666e] transition hover:border-[#996073] hover:text-[#996073]"
+                    className="rounded-full border border-[#b8adb4] px-4 py-1.5 text-xs font-semibold text-[#6e666e] transition hover:border-[#996073] hover:text-[#996073] sm:px-5"
                   >
                     {course.ctaLabel}
                   </a>
