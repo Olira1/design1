@@ -97,7 +97,7 @@ export default function HeroSection() {
       >
         <source src={video} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-black/80" />
 
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -210,9 +210,9 @@ export default function HeroSection() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 pt-24 sm:pt-28 md:px-6 md:pt-28">
         <div className="mx-auto max-w-4xl pb-24 pt-14 text-center sm:pb-32 sm:pt-20 md:pb-60 md:pt-40">
-          <h1 className="font-sans text-3xl font-bold leading-tight text-white sm:text-4xl md:text-6xl lg:text-7xl">
-            Learn Fashion Design{" "}
-            <span className="font-[var(--font-display)] italic text-[var(--color-accent)]">
+          <h1 className="font-sans text-3xl font-bold leading-tight text-white sm:text-4xl md:text-6xl lg:text-5xl">
+            IQFS - IQ Fashion School for Modern Fashion Design and Sewing{" "}
+            <span className="font-[var(--font-display)] italic text-[var(--color-accent)] 4">
               From Industry Experts
             </span>
             <br />
@@ -220,9 +220,10 @@ export default function HeroSection() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-3xl text-sm font-semibold leading-6 text-white/80 sm:text-base md:mt-6 md:leading-7">
-            Join our immersive in-person fashion design course and master
-            creative skills, modern design techniques, and real-world project
-            building in a collaborative environment.
+            IQ Fashion School is a Modern Fashion Design and Sewing Institute
+            helping Ethiopian students master practical tailoring, creative
+            design techniques, and real-world garment production through
+            immersive, hands-on training.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-10 sm:gap-4">
