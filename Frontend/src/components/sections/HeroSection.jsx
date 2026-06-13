@@ -81,7 +81,7 @@ export default function HeroSection() {
     <section
       id="hero"
       ref={heroRef}
-      className="relative mb-16 overflow-visible bg-black pb-20 text-white sm:mb-20 sm:pb-24 md:pb-32"
+      className="md:relative mb-16 md:overflow-visible md:bg-black pb-20 text-white sm:mb-20 sm:pb-24 md:pb-32"
     >
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -208,32 +208,44 @@ export default function HeroSection() {
         </nav>
       </header>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 pt-24 sm:pt-28 md:px-6 md:pt-28">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pt-24 sm:pt-28 md:px-6 md:pt-28 mb-20 sm:mb-0">
         <div className="mx-auto max-w-4xl pb-24 pt-14 text-center sm:pb-32 sm:pt-20 md:pb-60 md:pt-40">
-          <h1 className="font-sans text-3xl font-bold leading-tight text-white sm:text-4xl md:text-6xl lg:text-5xl">
-            IQFS - IQ Fashion School for Modern Fashion Design and Sewing{" "}
-            <span className="font-[var(--font-display)] italic text-[var(--color-accent)] 4">
+          <h1 className="font-sans text-[2rem] font-bold leading-[1.18] text-white sm:text-4xl sm:leading-tight md:text-6xl lg:text-5xl">
+            IQFS - IQ Fashion School
+            <span className="block mt-1 text-2xl sm:mt-0 sm:text-inherit">
+              for Modern Fashion Design and Sewing{" "}
+            </span>
+            <span className="font-[var(--font-display)] italic text-[var(--color-accent)]">
               From Industry Experts
             </span>
             <br />
             {/* From Industry Experts */}
           </h1>
 
-          <p className="mx-auto mt-5 max-w-3xl text-sm font-semibold leading-6 text-white/80 sm:text-base md:mt-6 md:leading-7">
-            IQ Fashion School is a Modern Fashion Design and Sewing Institute
-            helping Ethiopian students master practical tailoring, creative
-            design techniques, and real-world garment production through
-            immersive, hands-on training.
+          <p className="mx-auto mt-5 max-w-3xl text-sm font-semibold leading-6 text-white/85 sm:text-base md:mt-6 md:leading-7">
+            <span className="sm:hidden">
+              IQFS is a Modern Fashion Design and Sewing Institute helping
+              Ethiopian students build practical tailoring skills.
+            </span>
+            <span className="hidden sm:inline">
+              IQ Fashion School is a Modern Fashion Design and Sewing Institute
+              helping Ethiopian students master practical tailoring, creative
+              design techniques, and real-world garment production through
+              immersive, hands-on training.
+            </span>
           </p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-10 sm:gap-4">
-            <Button href="/register" className="min-w-[150px] sm:min-w-40">
+          <div className="mt-8 flex w-full flex-col items-center gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:justify-center sm:gap-4">
+            <Button
+              href="/register"
+              className="w-full max-w-[280px] sm:w-auto sm:min-w-40"
+            >
               Register Now
             </Button>
             <Button
               href="#schedules"
               // variant="secondary"
-              className="min-w-[150px] border-white/20 bg-gradient-to-r from-[#F94F95] to-[#000000] text-white hover:opacity-90 sm:min-w-40"
+              className="w-full max-w-[280px] border-white/20 bg-gradient-to-r from-[#F94F95] to-[#000000] text-white hover:opacity-90 sm:w-auto sm:min-w-40"
             >
               View Schedule
             </Button>
@@ -255,7 +267,7 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      <div className="relative z-20 -mt-8 px-4 sm:-mt-12 md:-mt-8 md:px-6 lg:-mt-14">
+      <div className="relative z-20 -mt-8 px-4 sm:-mt-12 md:-mt-8 md:px-6 lg:-mt-14 mb-20 sm:mb-0">
         <div className="mx-auto max-w-5xl text-center">
           <div className="rounded-2xl border border-[var(--color-accent)]/25 bg-white/70 p-4 shadow-[0_10px_30px_rgba(248,79,149,0.15)] backdrop-blur-sm sm:rounded-3xl sm:p-6 -mb-24 sm:-mb-100 md:p-8 md:-mb-85 md:min-h-100">
             <div className=" grid gap-6 md:grid-cols-3 md:gap-0">
@@ -263,34 +275,45 @@ export default function HeroSection() {
                 [
                   "1000+",
                   "Students Empowered",
+                  "Thousands of learners turned passion into practical sewing and fashion skills.",
                   "Join a growing community of aspiring fashion designers and sewing professionals who have transformed their passion into practical skills through our comprehensive training programs.",
                 ],
                 [
                   "100%",
                   "Hands-On Learning",
+                  "Learn by doing with real fabrics, machines, and guided studio projects.",
                   "From the very first lesson, students work with real fabrics, sewing machines, and practical projects that build confidence through experience rather than theory alone.",
                 ],
                 [
                   "95%",
                   "Satisfaction Rate",
+                  "Students trust our training quality, expert support, and career-focused guidance.",
                   "Our commitment to quality education, expert guidance, and student success has earned the trust and satisfaction of learners throughout their fashion journey.",
                 ],
-              ].map(([number, title, description], index) => (
-                <article
-                  key={`${number}-${index}`}
-                  className="px-2 sm:px-4 md:border-r md:border-[var(--color-border-soft)] md:last:border-r-0 md:px-5"
-                >
-                  <p className="font-sans text-3xl font-bold text-[#8a2108] sm:text-4xl md:text-5xl">
-                    {number}
-                  </p>
-                  <h3 className="mt-2 text-xl font-semibold text-[var(--color-ink)] sm:mt-3 sm:text-2xl md:text-3xl">
-                    {title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-[var(--color-muted)] md:mt-3 md:text-base md:leading-7">
-                    {description}
-                  </p>
-                </article>
-              ))}
+              ].map(
+                (
+                  [number, title, mobileDescription, desktopDescription],
+                  index,
+                ) => (
+                  <article
+                    key={`${number}-${index}`}
+                    className="px-2 sm:px-4 md:border-r md:border-[var(--color-border-soft)] md:last:border-r-0 md:px-5"
+                  >
+                    <p className="font-sans text-3xl font-bold text-[#8a2108] sm:text-4xl md:text-5xl">
+                      {number}
+                    </p>
+                    <h3 className="mt-2 text-xl font-semibold text-[var(--color-ink)] sm:mt-3 sm:text-2xl md:text-3xl">
+                      {title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-[var(--color-muted)] md:mt-3 md:text-base md:leading-7">
+                      <span className="sm:hidden">{mobileDescription}</span>
+                      <span className="hidden sm:inline">
+                        {desktopDescription}
+                      </span>
+                    </p>
+                  </article>
+                ),
+              )}
             </div>
           </div>
         </div>

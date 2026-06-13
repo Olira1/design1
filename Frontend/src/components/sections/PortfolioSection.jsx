@@ -64,29 +64,30 @@ export default function PortfolioSection() {
   }, [])
 
   return (
-    <section id="portfolio" className="bg-white px-4 py-20 md:px-6">
+    <section id="portfolio" className="bg-white px-4 py-12 sm:py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Student Portfolio"
           title="Student Creations & Practical Projects"
           description="Our students gain hands-on experience by creating real clothing projects during training — from sketch to finished piece."
+          className="[&>h2]:text-2xl [&>p]:mt-3 [&>p]:text-sm [&>p]:leading-6 sm:[&>h2]:text-5xl sm:[&>p]:mt-5 sm:[&>p]:text-base sm:[&>p]:leading-8"
         />
 
         <div
           ref={scrollContainerRef}
-          className="portfolio-scroll mt-12 overflow-x-auto pb-6 pt-12"
+          className="portfolio-scroll mt-8 overflow-x-auto pb-4 pt-6 sm:mt-12 sm:pb-6 sm:pt-12"
           onScroll={updateActiveIndexFromScroll}
         >
-          <div className="mx-auto flex min-w-max items-end justify-center gap-7 px-4 [perspective:1400px] md:gap-8">
+          <div className="mx-auto flex min-w-max items-end justify-center gap-4 px-2 [perspective:1400px] sm:gap-7 sm:px-4 md:gap-8">
             {displayItems.map((item, index) => (
               <article
                 key={item.id}
                 ref={(element) => {
                   cardRefs.current[index] = element
                 }}
-                className={`group h-auto w-[300px] shrink-0 overflow-hidden rounded-[30px] border border-[#dadcdf] bg-[#f1f2f4] shadow-[0_20px_34px_rgba(26,16,35,0.24)] transition duration-300 ${cardTilt[index] ?? 'rotate-0'} ${cardDepth[index] ?? '[transform:rotateY(0deg)_rotateX(6deg)]'} ${activeIndex === index ? 'ring-2 ring-[var(--color-accent)]/45' : ''} hover:z-10 hover:-translate-y-2 hover:[transform:rotateX(0deg)_rotateY(0deg)_rotateZ(0deg)] hover:shadow-[0_28px_48px_rgba(26,16,35,0.34)]`}
+                className={`group h-auto w-[235px] shrink-0 overflow-hidden rounded-2xl border border-[#dadcdf] bg-[#f1f2f4] shadow-[0_12px_20px_rgba(26,16,35,0.2)] transition duration-300 sm:w-[300px] sm:rounded-[30px] sm:shadow-[0_20px_34px_rgba(26,16,35,0.24)] ${cardTilt[index] ?? 'rotate-0'} ${cardDepth[index] ?? '[transform:rotateY(0deg)_rotateX(6deg)]'} ${activeIndex === index ? 'ring-2 ring-[var(--color-accent)]/45' : ''} hover:z-10 hover:-translate-y-2 hover:[transform:rotateX(0deg)_rotateY(0deg)_rotateZ(0deg)] hover:shadow-[0_28px_48px_rgba(26,16,35,0.34)]`}
               >
-                <div className="h-[350px] overflow-hidden md:h-[380px]">
+                <div className="h-[250px] overflow-hidden sm:h-[350px] md:h-[380px]">
                   <img
                     src={resolveImagePath(item.imageSrc, '')}
                     alt={item.imageAlt}
@@ -98,7 +99,7 @@ export default function PortfolioSection() {
           </div>
         </div>
 
-        <div className="mt-2 flex items-center justify-center gap-2" aria-label="Portfolio slide indicators">
+        <div className="mt-1 flex items-center justify-center gap-2 sm:mt-2" aria-label="Portfolio slide indicators">
           {displayItems.map((item, index) => (
             <button
               key={`dot-${item.id}`}
